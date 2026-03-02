@@ -3,395 +3,135 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sarah HUET, PhD — CV</title>
-  <meta name="description" content="Sarah HUET, PhD — Agri-food system researcher bridging ecology, economics, and hands-on practice.">
+  <title>Sarah HUET, PhD</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <style>
-    /* ---------- RESET & BASE ---------- */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { font-size: 15px; scroll-behavior: smooth; }
-    body {
-      font-family: 'Source Sans 3', 'Segoe UI', sans-serif;
-      color: #212121;
-      background: #f5f5f5;
-      line-height: 1.55;
-    }
-    a { color: #2E7D32; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    /* ---------- PAGE WRAPPER ---------- */
-    .page {
-      max-width: 1100px;
-      margin: 30px auto;
-      background: #fff;
-      box-shadow: 0 2px 20px rgba(0,0,0,.08);
-      display: grid;
-      grid-template-columns: 320px 1fr;
-      min-height: 100vh;
-      border-radius: 6px;
-      overflow: hidden;
-    }
-
-    /* ---------- LEFT SIDEBAR ---------- */
-    .sidebar {
-      background: #E8F5E9;
-      padding: 36px 26px;
-      border-right: 3px solid #2E7D32;
-    }
-
-    /* ---------- RIGHT MAIN ---------- */
-    .main {
-      padding: 36px 34px;
-    }
-
-    /* ---------- HEADER (inside sidebar) ---------- */
-    .header { text-align: center; margin-bottom: 24px; }
-    .header h1 { font-size: 1.65rem; color: #2E7D32; margin-bottom: 2px; }
-    .header .subtitle { font-size: 1.05rem; font-weight: 600; color: #424242; }
-    .header .tagline {
-      margin-top: 10px;
-      font-size: .88rem;
-      color: #616161;
-      font-style: italic;
-      line-height: 1.45;
-    }
-    .header .contact {
-      margin-top: 14px;
-      font-size: .85rem;
-      color: #424242;
-    }
-    .header .contact a { margin: 0 6px; }
-    .header .contact i { margin-right: 3px; }
-
-    /* ---------- SECTION TITLES ---------- */
-    h2 {
-      font-size: 1.12rem;
-      color: #2E7D32;
-      border-bottom: 2px solid #2E7D32;
-      padding-bottom: 4px;
-      margin: 22px 0 10px;
-      text-transform: uppercase;
-      letter-spacing: .5px;
-    }
-    h2:first-child { margin-top: 0; }
-    h3 {
-      font-size: .98rem;
-      color: #424242;
-      margin: 14px 0 6px;
-    }
-
-    /* ---------- LISTS ---------- */
-    ul.skill-list, ul.plain {
-      list-style: none;
-      padding-left: 0;
-    }
-    ul.skill-list li, ul.plain li {
-      position: relative;
-      padding-left: 16px;
-      margin-bottom: 4px;
-      font-size: .9rem;
-    }
-    ul.skill-list li::before, ul.plain li::before {
-      content: "•";
-      color: #2E7D32;
-      font-weight: 700;
-      position: absolute;
-      left: 0;
-    }
-
-    /* ---------- EDUCATION ITEMS ---------- */
-    .edu-item { margin-bottom: 8px; }
-    .edu-item .year { font-size: .82rem; color: #616161; }
-    .edu-item .degree { font-weight: 600; font-size: .92rem; }
-    .edu-item .school { font-size: .85rem; color: #616161; }
-
-    /* ---------- EXPERIENCE ENTRIES ---------- */
-    .entry { margin-bottom: 18px; }
-    .entry-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      flex-wrap: wrap;
-    }
-    .entry-title { font-weight: 700; color: #2E7D32; font-size: 1rem; }
-    .entry-date { font-size: .85rem; color: #888; white-space: nowrap; }
-    .entry-place { font-size: .88rem; color: #555; font-style: italic; }
-    .entry-subject { font-size: .88rem; font-style: italic; color: #333; margin: 3px 0; }
-    .entry-desc { font-size: .9rem; color: #424242; margin-top: 4px; }
-
-    /* ---------- PUBLICATIONS ---------- */
-    ol.pubs { padding-left: 22px; }
-    ol.pubs li { margin-bottom: 8px; font-size: .88rem; line-height: 1.5; }
-    ol.pubs li::marker { color: #2E7D32; font-weight: 700; }
-    .author-me { font-weight: 700; }
-
-    /* ---------- REFERENCES ---------- */
-    .refs {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-    .ref-card { font-size: .88rem; }
-    .ref-card .ref-name { font-weight: 700; }
-    .ref-card .ref-role { color: #616161; font-size: .82rem; }
-
-    /* ---------- RESPONSIVE ---------- */
-    @media (max-width: 800px) {
-      .page {
-        grid-template-columns: 1fr;
-        margin: 0;
-        border-radius: 0;
-      }
-      .sidebar { border-right: none; border-bottom: 3px solid #2E7D32; }
-    }
-
-    /* ---------- PRINT ---------- */
-    @media print {
-      body { background: #fff; }
-      .page { box-shadow: none; margin: 0; max-width: 100%; }
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-<div class="page">
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">Sarah HUET</a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/cv/">CV</a></li>
+        <!-- Add more pages later:
+        <li><a href="/research/">Research</a></li>
+        <li><a href="/publications/">Publications</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        -->
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </nav>
 
-  <!-- ======================== SIDEBAR ======================== -->
-  <aside class="sidebar">
-    <div class="header">
+  <!-- ========== HERO ========== -->
+  <header class="hero">
+    <div class="hero-content">
       <h1>Sarah HUET, PhD</h1>
-      <div class="subtitle">Agri-food System Researcher</div>
-      <div class="tagline">
-        Young researcher bridging hands-on practice, ecology, and economics
-        to study and model the transition of food systems from farm to fork.
-      </div>
-      <div class="contact">
-        <a href="mailto:sarah.huet@inrae.fr"><i class="fas fa-envelope"></i>Email</a>
-        <a href="https://github.com/sarah-huet"><i class="fab fa-github"></i>GitHub</a>
-      </div>
-    </div>
-
-    <!-- SKILLS -->
-    <h2>Skills</h2>
-
-    <h3><i class="fas fa-chart-bar"></i> Data Analysis &amp; Modeling</h3>
-    <ul class="skill-list">
-      <li>Reproducible workflows in R &amp; Python</li>
-      <li>Environmental impact modeling (GHG, land use, biodiversity, water)</li>
-      <li>Statistics: linear, GLM, mixed models, multivariate analysis, network inference, multi-dataset integration</li>
-      <li>Econometrics: panel data, causal inference</li>
-      <li>Visualization for policy &amp; scientific audiences</li>
-    </ul>
-
-    <h3><i class="fas fa-pen"></i> Science Communication</h3>
-    <ul class="skill-list">
-      <li>Peer-reviewed writing (5 published + 1 under review)</li>
-      <li>Oral presentations at international congresses &amp; national stakeholder audiences</li>
-      <li>Science outreach for general audiences</li>
-    </ul>
-
-    <h3><i class="fas fa-users"></i> Collaboration &amp; Engagement</h3>
-    <ul class="skill-list">
-      <li>Interdisciplinary teams (ecology, economics, policy)</li>
-      <li>Expert panel on biodiversity impact of certified food products</li>
-    </ul>
-
-    <h3><i class="fas fa-heart"></i> Attitudes</h3>
-    <ul class="skill-list">
-      <li>Organized with adaptability</li>
-      <li>Autonomy and teamwork</li>
-      <li>Pedagogy with benevolence</li>
-      <li>Curiosity and perseverance</li>
-    </ul>
-
-    <!-- EDUCATION -->
-    <h2>Education</h2>
-
-    <div class="edu-item">
-      <span class="year">Dec. 2022</span>
-      <div class="degree">PhD in Population Biology &amp; Ecology</div>
-      <div class="school">Univ. Bourgogne Franche-Comté</div>
-    </div>
-    <div class="edu-item">
-      <span class="year">2019</span>
-      <div class="degree">M.S. in Plant Biology</div>
-      <div class="school">University of Angers</div>
-    </div>
-    <div class="edu-item">
-      <span class="year">2017</span>
-      <div class="degree">B.S. in Plant Production</div>
-      <div class="school">University of Angers</div>
-    </div>
-    <div class="edu-item">
-      <span class="year">2015</span>
-      <div class="degree">B.S. in Human Nutrition &amp; Dietetics</div>
-      <div class="school">ICOGES School, Angers</div>
-    </div>
-    <div class="edu-item">
-      <span class="year">2011</span>
-      <div class="degree">Professional Certificate, French Cook</div>
-      <div class="school">Lycée Hôtelier de Fontiville</div>
-    </div>
-
-    <!-- LANGUAGES -->
-    <h2>Languages</h2>
-    <ul class="plain">
-      <li>French: mother tongue</li>
-      <li>English: proficient</li>
-    </ul>
-    <p style="font-size:.88rem; margin-top:6px;"><i class="fas fa-car-side"></i> French driving licence</p>
-
-    <!-- ADDITIONAL MANDATES -->
-    <h2>Additional Mandates</h2>
-    <ul class="skill-list">
-      <li><strong>Group leader, The Shifters NGO</strong> (present): Coordinate a multidisciplinary team of 12+ members developing national-scale policy proposals for an equitable agri-food system transition.</li>
-      <li><strong>PhD student representative</strong> (2 years): Elected member at the research unit board.</li>
-      <li><strong>President, Angers Plant Biology Student Assoc.</strong> (1 year).</li>
-    </ul>
-
-    <!-- HOBBIES -->
-    <h2>Hobbies</h2>
-    <ul class="plain">
-      <li>Horse riding &amp; canoeing</li>
-      <li>Hiking (medium-mountain certificate in progress)</li>
-      <li>Botany &amp; ornithology</li>
-    </ul>
-
-  </aside>
-
-  <!-- ======================== MAIN ======================== -->
-  <main class="main">
-
-    <h2>Professional Experiences</h2>
-
-    <h3>Academic Research</h3>
-
-    <div class="entry">
-      <div class="entry-head">
-        <span class="entry-title">Post-doc in Agri-food Economics</span>
-        <span class="entry-date">2023 – present</span>
-      </div>
-      <div class="entry-place">CESAER lab, INRAE, Institut Agro, France — Sup.: Valentin Bellassen</div>
-      <div class="entry-subject">Modeling agricultural practices from accountancy data and public statistics and assessing their environmental footprint.</div>
-      <div class="entry-desc">
-        Using the Farm Accountancy Data Network and public statistics, developed a model to infer agricultural practices and estimate biodiversity impact, GHG emissions, water consumption and pollution at product and farm scale. Applied matching procedures on 5,500+ French farms comparing certified and non-certified productions. Contributed to an expert panel mandated by two French ministries.
+      <p class="hero-subtitle">Agri-food System Researcher</p>
+      <p class="hero-tagline">
+        Bridging hands-on practice, ecology, and economics to study and model
+        the transition of food systems from farm to fork.
+      </p>
+      <div class="hero-links">
+        <a href="/cv/" class="btn btn-primary"><i class="fas fa-file-alt"></i> View my CV</a>
+        <a href="mailto:sarah.huet@inrae.fr" class="btn btn-outline"><i class="fas fa-envelope"></i> Contact me</a>
       </div>
     </div>
+  </header>
 
-    <div class="entry">
-      <div class="entry-head">
-        <span class="entry-title">PhD in Microbial Ecology</span>
-        <span class="entry-date">2019 – 2022</span>
-      </div>
-      <div class="entry-place">Agroecology dept., Univ. Bourgogne Franche-Comté — Sup.: L. Philippot, A. Spor, S. Romdhane</div>
-      <div class="entry-subject">Deciphering biotic interactions and their role in soil microbial community assembly and functions.</div>
-      <div class="entry-desc">
-        Developed an innovative experimental approach with statistical techniques (linear, GLM, mixed models, multivariate analysis, network inference, multi-dataset integration) to causally infer effects of biotic interactions, spatial distancing, and community characteristics on microbial community assembly and functions.
-      </div>
-    </div>
-
-    <div class="entry">
-      <div class="entry-head">
-        <span class="entry-title">Intern — Host–Parasite–Microbiome Interactions</span>
-        <span class="entry-date">2019</span>
-      </div>
-      <div class="entry-place">Lab. Plant Biology &amp; Pathology, Univ. of Nantes — Sup.: L. Poulin, J.-B. Pouvreau</div>
-      <div class="entry-subject"><em>P. ramosa</em> host influence on seed phenotype and microbial communities.</div>
-    </div>
-
-    <div class="entry">
-      <div class="entry-head">
-        <span class="entry-title">Intern — Bioinformatic Meta-analysis</span>
-        <span class="entry-date">2018</span>
-      </div>
-      <div class="entry-place">Research Inst. in Horticulture &amp; Seeds, Univ. of Angers — Sup.: M. Barret, G. Torres, M. Briand</div>
-      <div class="entry-subject">Meta-analysis of 12 studies about seed microbial communities.</div>
-    </div>
-
-    <h3>Science Communication</h3>
-
-    <div class="entry">
-      <div class="entry-head">
-        <span class="entry-title">Science communicator to general audiences</span>
-        <span class="entry-date">2013 – present</span>
-      </div>
-      <div class="entry-desc">
-        Experimentarium network (Univ. Bourgogne Franche-Comté), Preventive Medicine Service (Univ. Angers), NGO "Les Petits Débrouillards" (Angers).
-      </div>
-    </div>
-
-    <h3>Nutrition, Cooking &amp; Farming</h3>
-
-    <div class="entry">
-      <div class="entry-head">
-        <span class="entry-title">Nutritionist intern</span>
-        <span class="entry-date">2013 – 2015</span>
-      </div>
-      <div class="entry-desc">Public catering, clinics and hospitals — Loire Valley &amp; Paris area</div>
-    </div>
-
-    <div class="entry">
-      <div class="entry-head">
-        <span class="entry-title">Cook</span>
-        <span class="entry-date">2010 – 2013</span>
-      </div>
-      <div class="entry-desc">Traditional restaurants &amp; collective catering — French Alps &amp; Loire Valley</div>
-    </div>
-
-    <div class="entry">
-      <div class="entry-head">
-        <span class="entry-title">Cultivator &amp; Merchant</span>
-        <span class="entry-date">2007 – 2010</span>
-      </div>
-      <div class="entry-desc">Vineyard, orchard, greenhouse — Bordeaux region &amp; Loire Valley</div>
-    </div>
-
-    <!-- PUBLICATIONS -->
-    <h2>Peer-reviewed Articles</h2>
-    <ol class="pubs">
-      <li><span class="author-me">Huet S.</span>, Romdhane S., Breuil M-C., Bru D., Spor A., Philippot L. (2025) Insights into the Biotic Factors Driving the Outcome of Coalescence Events Between Bacterial Communities. <em>ISME J.</em> (in press)</li>
-      <li><span class="author-me">Huet S.</span>, Diallo A., Regolo J., Ihasusta A., Arnaud L., Bellassen V. (2025) Estimating Biodiversity Impact from Agricultural Statistics: an application to Food Quality Schemes in France. <em>Ecological Economics</em> (under review). <a href="http://dx.doi.org/10.2139/ssrn.5217233">SSRN</a></li>
-      <li>Romdhane S., <span class="author-me">Huet S.</span>, Spor A., Bru D., Breuil M-C., Philippot L. (2024) Manipulating the Physical Distance Between Cells During Soil Colonization… <em>Environmental Microbiome</em> 19, 18.</li>
-      <li><span class="author-me">Huet S.</span>, Romdhane S., Breuil M-C., Bru D., Mounier A., Spor A., Philippot L. (2023) Experimental community coalescence sheds light on microbial interactions in soil and restores impaired functions. <em>Microbiome</em> 11, 42.</li>
-      <li><span class="author-me">Huet S.</span>, Pouvreau J-B., Delage E., et al. (2020) Populations of the Parasitic Plant <em>Phelipanche ramosa</em> Influence Their Seed Microbiota. <em>Front. Plant Sci.</em> 11:1075.</li>
-    </ol>
-
-    <h2>Books &amp; Reports</h2>
-    <ul class="plain">
-      <li>Ulrich C., …, <span class="author-me">Huet S.</span> et al. (2025) Agriculture, aquaculture and fishing: impact of food standards on biodiversity. INRAE; Ifremer.</li>
-      <li>Pouvreau J.-B., Poulin L., <span class="author-me">Huet S.</span>, Delavault P. (2021) Strigolactone-Like Bioactivity via Parasitic Plant Germination Bioassay. <em>Methods in Molecular Biology</em>, vol 2309. Springer.</li>
-    </ul>
-
-    <!-- CONFERENCES -->
-    <h2>Conferences</h2>
-    <ul class="plain">
-      <li><span class="author-me">Huet S.</span>, Bockstaller C., Sirami S. (2025) "Approaches to quantify the impact of agricultural products on biodiversity." BiodivLabel congress, Paris. <em>Oral presentation.</em></li>
-      <li><span class="author-me">Huet S.</span> et al. (2022) "Experimental community coalescence sheds light on microbial interactions…" ISME 18, Lausanne. <em>Poster.</em></li>
-      <li><span class="author-me">Huet S.</span> et al. (2021) "Experimental community coalescence…" 10th MEFA Symposium. <em>Oral presentation.</em></li>
-    </ul>
-
-    <!-- REFERENCES -->
-    <h2>References</h2>
-    <div class="refs">
-      <div class="ref-card">
-        <div class="ref-name">Laurent PHILIPPOT</div>
-        <div class="ref-role">Research Director</div>
-        <div><a href="mailto:laurent.philippot@inrae.fr">laurent.philippot@inrae.fr</a></div>
-        <div>+33 380 693 346</div>
-      </div>
-      <div class="ref-card">
-        <div class="ref-name">Valentin BELLASSEN</div>
-        <div class="ref-role">Research Director</div>
-        <div><a href="mailto:valentin.bellassen@inrae.fr">valentin.bellassen@inrae.fr</a></div>
-        <div>+33 380 772 791</div>
+  <!-- ========== ABOUT SECTION ========== -->
+  <section class="section" id="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            I am a postdoctoral researcher at <strong>INRAE</strong> (CESAER lab, Dijon, France),
+            working at the crossroads of agricultural economics and environmental science.
+            My current work focuses on modeling agricultural practices from accountancy data
+            and assessing their environmental footprint — biodiversity, GHG emissions, water
+            consumption and pollution.
+          </p>
+          <p>
+            Before turning to economics, I completed a PhD in <strong>microbial ecology</strong>,
+            and before entering academia I worked as a <strong>cook</strong>, a
+            <strong>nutritionist</strong>, and a <strong>farm worker</strong>. This diverse path
+            gives me a unique farm-to-fork perspective on food system transitions.
+          </p>
+        </div>
+        <div class="about-highlights">
+          <div class="highlight-card">
+            <i class="fas fa-microscope"></i>
+            <h3>Research</h3>
+            <p>Microbial ecology, agri-food economics, environmental impact assessment</p>
+          </div>
+          <div class="highlight-card">
+            <i class="fas fa-chart-line"></i>
+            <h3>Methods</h3>
+            <p>R &amp; Python, causal inference, matching, multivariate statistics</p>
+          </div>
+          <div class="highlight-card">
+            <i class="fas fa-seedling"></i>
+            <h3>Engagement</h3>
+            <p>The Shifters NGO, science outreach, interdisciplinary collaboration</p>
+          </div>
+        </div>
       </div>
     </div>
+  </section>
 
-  </main>
+  <!-- ========== SELECTED PUBLICATIONS ========== -->
+  <section class="section section-alt" id="publications">
+    <div class="container">
+      <h2>Selected Publications</h2>
+      <ul class="pub-list">
+        <li>
+          <span class="author-me">Huet S.</span> et al. (2025)
+          Insights into the Biotic Factors Driving the Outcome of Coalescence Events Between Bacterial Communities.
+          <em>ISME J.</em> (in press)
+        </li>
+        <li>
+          <span class="author-me">Huet S.</span> et al. (2025)
+          Estimating Biodiversity Impact from Agricultural Statistics.
+          <em>Ecological Economics</em> (under review).
+          <a href="http://dx.doi.org/10.2139/ssrn.5217233">SSRN</a>
+        </li>
+        <li>
+          <span class="author-me">Huet S.</span> et al. (2023)
+          Experimental community coalescence sheds light on microbial interactions in soil.
+          <em>Microbiome</em> 11, 42.
+        </li>
+      </ul>
+      <p style="margin-top: 16px;">
+        <a href="/cv/#publications" class="btn btn-outline btn-sm">See all publications →</a>
+      </p>
+    </div>
+  </section>
 
-</div>
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="mailto:sarah.huet@inrae.fr"><i class="fas fa-envelope"></i></a>
+        <a href="https://github.com/sarah-huet"><i class="fab fa-github"></i></a>
+      </div>
+      <p>&copy; 2025 Sarah HUET. Built with care.</p>
+    </div>
+  </footer>
+
+  <!-- Mobile nav toggle -->
+  <script>
+    document.querySelector('.nav-toggle').addEventListener('click', () => {
+      document.querySelector('.nav-links').classList.toggle('open');
+    });
+  </script>
 
 </body>
 </html>

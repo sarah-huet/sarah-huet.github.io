@@ -1,0 +1,29 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Sarah Huet"
+  navbar:
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "CV"
+        href: cv.qmd
+      - text: "Projects"
+        href: projects.qmd
+      - text: "Blog"
+        href: blog.qmd
+      - text: "R package docs"
+        href: /FADN2Footprint/   # this points to the pkgdown site from repo 2
+  page-footer:
+    left: "© Sarah Huet"
+    right:
+      - text: GitHub
+        href: https://github.com/sarah-huet
+
+format:
+  html:
+    theme: cosmo
+    css: assets/css/styles.css
+    toc: true
