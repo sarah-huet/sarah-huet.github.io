@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sarah Huet — Media & Talks</title>
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f4f6fb;
+      color: #1a1a2e;
+      min-height: 100vh;
+    }
+
+    /* ===== HEADER ===== */
+    .page-header {
+      background: linear-gradient(135deg, #22427F 0%, #1a3160 100%);
+      color: #fff;
+      padding: 36px 40px 28px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .page-header-left h1 {
+      font-size: 1.9rem;
+      font-weight: 800;
+      letter-spacing: 0.01em;
+    }
+
+    .page-header-left p {
+      font-size: 0.95rem;
+      color: #b8c8e8;
+      margin-top: 4px;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.13);
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 9px 18px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.25);
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .back-btn:hover {
+      background: rgba(255,255,255,0.25);
+      border-color: rgba(255,255,255,0.5);
+    }
+
+    .back-btn::before {
+      content: '←';
+      font-size: 1rem;
+    }
+
+    /* ===== MAIN LAYOUT ===== */
+    .page-content {
+      max-width: 960px;
+      margin: 40px auto;
+      padding: 0 24px 60px 24px;
+    }
+
+    /* ===== SECTION TITLE ===== */
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #22427F;
+      border-bottom: 3px solid #22427F;
+      padding-bottom: 8px;
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* ===== TALKS LIST (same as CV) ===== */
+    .talks-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border-left: 3px solid #22427F;
+      margin-left: 10px;
+      padding-left: 0;
+    }
+
+    .talk-item {
+      display: flex;
+      gap: 16px;
+      padding: 18px 0 18px 24px;
+      position: relative;
+      border-bottom: 1px solid #e8edf5;
+      transition: background 0.2s;
+      background: #fff;
+    }
+
+    .talk-item:last-child {
+      border-bottom: none;
+    }
+
+    .talk-item:hover {
+      background-color: #f0f4ff;
+    }
+
+    .talk-item::before {
+      content: '';
+      position: absolute;
+      left: -7px;
+      top: 22px;
+      width: 11px;
+      height: 11px;
+      background: #22427F;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      box-shadow: 0 0 0 2px #22427F;
+    }
+
+    .talk-meta {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 6px;
+      min-width: 120px;
+      flex-shrink: 0;
+    }
+
+    .talk-date {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #22427F;
+      white-space: nowrap;
+    }
+
+    .talk-badge {
+      font-size: 0.65rem;
+      font-weight: 600;
+      padding: 2px 7px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      white-space: nowrap;
+    }
+
+    .badge-conference  { background: #dbeafe; color: #1e3a8a; }
+    .badge-invited     { background: #ede9fe; color: #5b21b6; }
+
+    .talk-content {
+      flex: 1;
+    }
+
+    .talk-speakers {
+      font-size: 0.82rem;
+      color: #444;
+      margin: 0 0 2px 0;
+      line-height: 1.4;
+    }
+
+    .talk-speakers strong {
+      color: #22427F;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .talk-title {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: #1a1a2e;
+      margin: 0 0 5px 0;
+      line-height: 1.4;
+      font-style: italic;
+    }
+
+    .talk-venue {
+      font-size: 0.82rem;
+      color: #555;
+      margin: 0 0 10px 0;
+      line-height: 1.4;
+    }
+
+    /* ===== MEDIA EMBED ===== */
+    .talk-media {
+      margin-top: 12px;
+    }
+
+    /* Photo card */
+    .media-photo-card {
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid #dde3f0;
+      background: #f7f9ff;
+      max-width: 540px;
+    }
+
+    .media-photo-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      aspect-ratio: 1893 / 1014;
+      object-fit: cover;
+    }
+
+    .media-photo-caption {
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .media-photo-caption span {
+      font-size: 0.78rem;
+      color: #555;
+      font-style: italic;
+    }
+
+    /* Video embed */
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 540px;
+      aspect-ratio: 16 / 9;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid #dde3f0;
+      background: #000;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Shared link button */
+    .talk-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      color: #22427F;
+      text-decoration: none;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 0.78rem;
+      border: 1px solid #22427F;
+      padding: 3px 10px;
+      border-radius: 5px;
+      transition: background 0.2s, color 0.2s;
+      white-space: nowrap;
+    }
+
+    .talk-link:hover {
+      background: #22427F;
+      color: #fff;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 640px) {
+      .page-header { padding: 24px 20px; }
+      .page-content { padding: 0 12px 40px 12px; }
+
+      .talk-item {
+        flex-direction: column;
+        gap: 6px;
+        padding-left: 18px;
+      }
+      .talk-meta {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        min-width: unset;
+      }
+      .media-photo-card,
+      .video-wrapper {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== PAGE HEADER ===== -->
+  <header class="page-header">
+    <div class="page-header-left">
+      <h1>🎬 Media & Talks</h1>
+      <p>Selected recorded presentations — Sarah Huet</p>
+    </div>
+    <a href="../CV/cv.html" class="back-btn">Back to CV</a>
+  </header>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="page-content">
+
+    <h2 class="section-title">
+      <span>🎤</span> Recorded Presentations
+    </h2>
+
+    <div class="talks-list">
+
+      <!-- ── ITEM 1 · BiodivLabel Colloquium ── -->
+      <div class="talk-item">
+        <div class="talk-meta">
+          <span class="talk-date">Apr 2025</span>
+          <span class="talk-badge badge-conference">Colloquium</span>
+        </div>
+        <div class="talk-content">
+          <p class="talk-speakers">Sirami S., Bockstaller C., <strong>Huet S.</strong></p>
+          <p class="talk-title">"Approaches to quantify the impact of agricultural products on biodiversity."</p>
+          <p class="talk-venue">
+            BiodivLabel Restitution Colloquium — Collective expertise congress, Paris, France.
+            Oral presentation.
+          </p>
+
+          <div class="talk-media">
+            <div class="media-photo-card">
+              <!-- Replace the src below with your actual image path or URL -->
+              <img
+                src="biodivlabel_talk.jpg"
+                alt="Sarah Huet presenting at the BiodivLabel Colloquium, Paris, April 2025"
+                width="1893"
+                height="1014"
+              />
+              <div class="media-photo-caption">
+                <span>BiodivLabel Colloquium, Paris — April 2025</span>
+                <a
+                  href="https://depe.hub.inrae.fr/actualites/colloque-de-l-etude-biodivlabel"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="talk-link"
+                >🔗 Event page</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div><!-- /talk-item -->
+
+      <!-- ── ITEM 2 · Dynafor YouTube ── -->
+      <div class="talk-item">
+        <div class="talk-meta">
+          <span class="talk-date">Nov 2024</span>
+          <span class="talk-badge badge-invited">Invited Talk</span>
+        </div>
+        <div class="talk-content">
+          <p class="talk-speakers"><strong>Huet S.</strong></p>
+          <p class="talk-title">"Environmental footprinting of agricultural products."</p>
+          <p class="talk-venue">
+            Dynafor Team Seminar — INRAE Toulouse, France.
+            Oral presentation.
+          </p>
+
+          <div class="talk-media">
+            <div class="video-wrapper">
+              <iframe
+                src="https://www.youtube.com/embed/bYmsb57kl1w?start=270"
+                title="Sarah Huet — Environmental footprinting of agricultural products, Dynafor Seminar 2024"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <p style="margin-top:8px;">
+              <a
+                href="https://www.youtube.com/watch?v=bYmsb57kl1w&t=270s"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="talk-link"
+              >▶ Watch on YouTube</a>
+            </p>
+          </div>
+
+        </div>
+      </div><!-- /talk-item -->
+
+    </div><!-- /talks-list -->
+
+  </main>
+
+</body>
+</html>
