@@ -1,0 +1,33 @@
+[
+  {
+    "objectID": "Media/media.html",
+    "href": "Media/media.html",
+    "title": "Media & Conferences",
+    "section": "",
+    "text": "Here are a few of the presentations and conferences I have spoken at recently.\n\nConference Name 2025: Topic of my talk\n\n\n\nAnother Conference: Data Science in Agriculture"
+  },
+  {
+    "objectID": "FADN2Footprint/FADN2Footprint.html",
+    "href": "FADN2Footprint/FADN2Footprint.html",
+    "title": "FADN2Footprint",
+    "section": "",
+    "text": "The FADN2Footprint project aims to… [add your description here].\n\n\nWe use advanced data processing to map agricultural economic data to environmental impacts.\n```python # You can easily show off python or R code like this! import pandas as pd def calculate_footprint(fadn_data): # Your brilliant code here pass"
+  },
+  {
+    "objectID": "FADN2Footprint/FADN2Footprint.html#about-the-project",
+    "href": "FADN2Footprint/FADN2Footprint.html#about-the-project",
+    "title": "FADN2Footprint",
+    "section": "",
+    "text": "The FADN2Footprint project aims to… [add your description here].\n\n\nWe use advanced data processing to map agricultural economic data to environmental impacts.\n```python # You can easily show off python or R code like this! import pandas as pd def calculate_footprint(fadn_data): # Your brilliant code here pass"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome",
+    "section": "",
+    "text": "Hi, I’m Sarah Huet! I am a [Your Profession/Researcher], specializing in [Your Field, e.g., environmental data science, R, and Python].\nWelcome to my personal website. Below you can explore my projects, background, and talks.\n\n\n\n\n\n\nMy CV\nRead about my academic and professional background, publications, and skills.\n\n\nFADN2Footprint\nDiscover my project bridging the Farm Accountancy Data Network to environmental footprints.\n\n\nMedia\nWatch videos of my recent conference talks and public presentations.",
+    "crumbs": [
+      "Home"
+    ]
+  }
+]

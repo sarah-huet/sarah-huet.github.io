@@ -1,0 +1,13 @@
+---
+title: "Media & Conferences"
+---
+
+Here are a few of the presentations and conferences I have spoken at recently.
+
+### Conference Name 2025: Topic of my talk
+
+{{< video https://www.youtube.com/watch?v=YOUR_VIDEO_ID >}}
+
+### Another Conference: Data Science in Agriculture
+
+{{< video https://vimeo.com/YOUR_VIDEO_ID >}}

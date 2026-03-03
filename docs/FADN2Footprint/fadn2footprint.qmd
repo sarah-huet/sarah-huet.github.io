@@ -1,0 +1,17 @@
+---
+title: "FADN2Footprint"
+---
+
+## About the Project
+
+The **FADN2Footprint** project aims to... [add your description here].
+
+### Methodology
+We use advanced data processing to map agricultural economic data to environmental impacts.
+
+```python
+# You can easily show off python or R code like this!
+import pandas as pd
+def calculate_footprint(fadn_data):
+    # Your brilliant code here
+    pass

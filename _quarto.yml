@@ -1,29 +1,27 @@
 project:
   type: website
-  output-dir: _site
+  output-dir: docs
 
 website:
   title: "Sarah Huet"
-  navbar:
-    left:
+  site-url: "https://sarah-huet.github.io/"
+
+  # This creates the lateral toolbar
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
       - text: "Home"
-        href: index.qmd
+        file: index.qmd
       - text: "CV"
-        href: cv.qmd
-      - text: "Projects"
-        href: projects.qmd
-      - text: "Blog"
-        href: blog.qmd
-      - text: "R package docs"
-        href: /FADN2Footprint/   # this points to the pkgdown site from repo 2
-  page-footer:
-    left: "© Sarah Huet"
-    right:
-      - text: GitHub
-        href: https://github.com/sarah-huet
+        file: cv.qmd
+      - text: "FADN2Footprint"
+        file: fadn2footprint.qmd
+      - text: "Media"
+        file: media.qmd
 
 format:
   html:
-    theme: cosmo
+    theme: mint # You can change this to 'cosmo', lux', 'minty', 'flatly', etc.
     css: assets/css/styles.css
     toc: true
