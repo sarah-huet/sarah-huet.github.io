@@ -1,4 +1,3 @@
-html_content = """<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -58,6 +57,21 @@ html_content = """<!DOCTYPE html>
     }
     header .contacts a:hover { color: #fff; }
     .icon { font-style: normal; font-size: 1em; }
+
+    header .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.13);
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 9px 18px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.25);
+      transition: background 0.2s, border-color 0.2s;
+    }
 
     /* LAYOUT */
     .wrapper {
@@ -315,6 +329,9 @@ html_content = """<!DOCTYPE html>
 <body>
 
 <!-- HEADER -->
+  <header>
+    <a href="index.html" class="back-btn">Back to Homepage</a>
+  </header>
 <header>
   <h1>Sarah HUET, PhD</h1>
   <h2>Agri-food Ecology &amp; Economics</h2>
@@ -388,9 +405,9 @@ html_content = """<!DOCTYPE html>
     <!-- KEY CAPABILITIES -->
     <div class="section-title">Key Capabilities &amp; Achievements</div>
     <ul class="capabilities-list">
-      <li><strong>Interdisciplinary Agri-Food Economist &amp; Ecologist:</strong> Unique trajectory from hands-on practitioner to quantitative scientist, bridging the gap between physical environmental footprinting and economic valuation.</li>
+      <li><strong>Interdisciplinary Agri-Food Economist &amp; Ecologist:</strong> Unique trajectory from hands-on practitioner to quantitative scientist, bridging the gap between environmental science and agricultural economics.</li>
       <li><strong>Pathfinder in Large-Scale Agri-Environmental Assessment:</strong> Developer of the <em>FADN2Footprint</em> R package and the <em>BVIAS</em> model, translating European farm accountancy (FADN) and spatial (LPIS) data into environmental footprints.</li>
-      <li><strong>Demonstrated Policy Impact &amp; Stakeholder Engagement:</strong> Appointed to an expert group for two French ministries, invited to present at DG Agri on FADN/FSDN, and at several stakeholders meetings.</li>
+      <li><strong>Demonstrated Policy Impact &amp; Stakeholder Engagement:</strong> Appointed to an expert group for two French ministries, invited to present at DG Agri on FADN/FSDN, and at several policy-makers and stakeholders meetings.</li>
       <li><strong>Strong Academic Communicator:</strong> Proven track record of high-impact scientific writing (5 peer-reviewed articles in top-tier journals) and delivering presentations at international congresses as well as internal seminars in other labs.</li>
     </ul>
 
@@ -890,9 +907,3 @@ html_content = """<!DOCTYPE html>
 
 </body>
 </html>
-"""
-
-with open("sarah_huet_cv.html", "w", encoding="utf-8") as f:
-    f.write(html_content)
-
-print("CV saved to sarah_huet_cv.html")
