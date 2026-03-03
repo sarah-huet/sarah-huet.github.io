@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sarah HUET – FADN2Footprint</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <h1>Sarah HUET, PhD</h1>
+  <h2>Agri-food Ecology &amp; Economics</h2>
+  <p class="tagline">Early career researcher bridging ecology and economics, with a hands-on practice background,<br/>to study, model, and leverage the transition of food systems.</p>
+  <div class="contacts">
+    <a href="mailto:sarah.huet@inrae.fr"><span class="icon">✉</span> sarah.huet@inrae.fr</a>
+    <a href="https://orcid.org/0000-0002-5449-6959" target="_blank"><span class="icon">🔗</span> ORCID</a>
+    <a href="https://github.com/sarah-huet" target="_blank"><span class="icon">⌨</span> GitHub</a>
+    <a href="https://www.linkedin.com/in/sarah-huet-phd/" target="_blank"><span class="icon">⌨</span> LinkedIn</a>
+  </div>
+</header>
+
+<div class="wrapper">
+
+  <!-- SIDEBAR NAVIGATION -->
+  <aside>
+    <h3>Navigation</h3>
+    <ul class="nav-links">
+      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="cv.html"><i class="fas fa-file-alt"></i> CV</a></li>
+      <li><a href="fadn2footprint.html" class="active"><i class="fas fa-leaf"></i> FADN2Footprint</a></li>
+      <li><a href="media.html"><i class="fas fa-video"></i> Media</a></li>
+    </ul>
+
+    <h3>Languages</h3>
+    <div class="lang-item">
+      <div class="lang-label"><span>French</span><span>Native</span></div>
+      <div class="lang-bar"><div class="lang-bar-fill" style="width:100%"></div></div>
+    </div>
+    <div class="lang-item">
+      <div class="lang-label"><span>English</span><span>Fluent</span></div>
+      <div class="lang-bar"><div class="lang-bar-fill" style="width:88%"></div></div>
+    </div>
+    <div class="lang-item">
+      <div class="lang-label"><span>Spanish</span><span>Beginner</span></div>
+      <div class="lang-bar"><div class="lang-bar-fill" style="width:12%"></div></div>
+    </div>
+
+    <h3>Core Skills</h3>
+    <div class="skill-item">
+      <strong>Data &amp; Econometrics</strong>
+      R, reproducible workflows, multi-dataset integration, causal inference, panel data econometrics
+    </div>
+    <div class="skill-item">
+      <strong>Environmental Assessment</strong>
+      LCA-inspired footprints, GHG emissions (IPCC Tier 2-3), biodiversity impact indicators
+    </div>
+    <div class="skill-item">
+      <strong>Policy-Oriented</strong>
+      Interactions with policy-makers; CAP reform and environmental labeling
+    </div>
+
+    <h3>Attitudes</h3>
+    <div class="tag-list">
+      <span class="tag">Interdisciplinary</span>
+      <span class="tag">Rigorous</span>
+      <span class="tag">Policy-minded</span>
+      <span class="tag">Collaborative</span>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main>
+
+    <!-- PROJECT TITLE -->
+    <div class="project-intro">
+      <span class="project-badge"><i class="fas fa-code-branch"></i> Work in progress</span>
+      <h1 style="font-size:1.8em; color:#22427f; margin-top:10px;">FADN2Footprint</h1>
+      <p style="font-size:1em; color:#555; margin-top:8px; line-height:1.7; max-width:750px;">
+        <strong>FADN2Footprint</strong> is an R package currently under development that transforms
+        Farm Accountancy Data Network (FADN) records into multi-criteria sustainability assessments.
+        It bridges farm-level economic data with environmental, economic, and social performance
+        indicators in a life-cycle assessment spirit.
+      </p>
+    </div>
+
+    <!-- ===== INPUT DATA ===== -->
+    <div class="project-section">
+      <h2><i class="fas fa-database" style="margin-right:8px;"></i>Input Data</h2>
+      <p style="font-size:0.93em; color:#444; margin-bottom:16px; line-height:1.6;">
+        The package supports two main data pathways, complemented by additional datasets for allocation keys and emission parameters.
+      </p>
+
+      <div class="input-pathways">
+
+        <!-- Pathway 1 -->
+        <div class="pathway-card">
+          <div class="pathway-header">
+            <span class="pathway-number">1</span>
+            <h3>National FADN + Spatial Data</h3>
+          </div>
+          <div class="pathway-body">
+            <ul>
+              <li><i class="fas fa-table" style="color:#22427f; margin-right:6px;"></i><strong>National FADN</strong> — Detailed farm accountancy data at country level</li>
+              <li><i class="fas fa-map" style="color:#22427f; margin-right:6px;"></i><strong>National LPIS</strong> — Land Parcel Identification System for spatial crop allocation</li>
+              <li><i class="fas fa-tree" style="color:#22427f; margin-right:6px;"></i><strong>National hedges map</strong> — Hedge density and landscape structure data</li>
+              <li><i class="fas fa-seedling" style="color:#22427f; margin-right:6px;"></i><strong>Cover crop map</strong> — Ground cover and inter-crop management data</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Pathway 2 -->
+        <div class="pathway-card">
+          <div class="pathway-header">
+            <span class="pathway-number">2</span>
+            <h3>EU FADN</h3>
+          </div>
+          <div class="pathway-body">
+            <ul>
+              <li><i class="fas fa-globe-europe" style="color:#22427f; margin-right:6px;"></i><strong>EU FADN</strong> — Harmonized European-level farm accountancy data, enabling cross-country comparison</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Additional data -->
+        <div class="pathway-card pathway-additional">
+          <div class="pathway-header">
+            <span class="pathway-number" style="background:#5b9bd5;">+</span>
+            <h3>Additional Data Sources</h3>
+          </div>
+          <div class="pathway-body">
+            <ul>
+              <li><i class="fas fa-clipboard-list" style="color:#5b9bd5; margin-right:6px;"></i><strong>Farm practices survey &amp; feed tables</strong> — Used to derive allocation keys for inputs across activities and products</li>
+              <li><i class="fas fa-calculator" style="color:#5b9bd5; margin-right:6px;"></i><strong>Emission parameters</strong> — From national Greenhouse Gas Inventories (GHGIs) or IPCC default values for footprint computation</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ===== SCOPE ===== -->
+    <div class="project-section">
+      <h2><i class="fas fa-bullseye" style="margin-right:8px;"></i>Scope</h2>
+      <div class="scope-cards">
+        <div class="scope-card">
+          <div class="scope-card-icon"><i class="fas fa-recycle"></i></div>
+          <div>
+            <strong>Life Cycle Assessment spirit</strong>
+            <p>Adopts an LCA-inspired methodology covering upstream and on-farm processes</p>
+          </div>
+        </div>
+        <div class="scope-card">
+          <div class="scope-card-icon"><i class="fas fa-link"></i></div>
+          <div>
+            <strong>Scope 3 coverage</strong>
+            <p>Accounts for indirect emissions and impacts along the supply chain (purchased inputs, feed, energy)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== SCALE ===== -->
+    <div class="project-section">
+      <h2><i class="fas fa-layer-group" style="margin-right:8px;"></i>Scale of Analysis</h2>
+      <div class="scale-pipeline">
+        <div class="scale-step">
+          <div class="scale-icon"><i class="fas fa-globe-europe"></i></div>
+          <span>Country</span>
+        </div>
+        <div class="scale-arrow"><i class="fas fa-chevron-right"></i></div>
+        <div class="scale-step">
+          <div class="scale-icon"><i class="fas fa-map-marked-alt"></i></div>
+          <span>NUTS2</span>
+        </div>
+        <div class="scale-arrow"><i class="fas fa-chevron-right"></i></div>
+        <div class="scale-step">
+          <div class="scale-icon"><i class="fas fa-warehouse"></i></div>
+          <span>Farm</span>
+        </div>
+        <div class="scale-arrow"><i class="fas fa-chevron-right"></i></div>
+        <div class="scale-step">
+          <div class="scale-icon"><i class="fas fa-tasks"></i></div>
+          <span>Activity</span>
+        </div>
+        <div class="scale-arrow"><i class="fas fa-chevron-right"></i></div>
+        <div class="scale-step">
+          <div class="scale-icon"><i class="fas fa-box-open"></i></div>
+          <span>Product</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== OUTPUT ===== -->
+    <div class="project-section">
+      <h2><i class="fas fa-chart-bar" style="margin-right:8px;"></i>Output Indicators</h2>
+
+      <!-- Farm Practices -->
+      <div class="output-category">
+        <div class="output-category-header">
+          <i class="fas fa-tractor"></i>
+          <h3>Farm Practices</h3>
+        </div>
+        <div class="output-tags">
+          <span class="output-tag">Fertilizer quantity &amp; quality</span>
+          <span class="output-tag">Pesticides use</span>
+          <span class="output-tag">Tillage intensity</span>
+          <span class="output-tag">Crop diversity</span>
+          <span class="output-tag">Yields</span>
+          <span class="output-tag">Hedge density</span>
+          <span class="output-tag">Mean field size</span>
+          <span class="output-tag">Ground cover</span>
+          <span class="output-tag">Livestock density</span>
+          <span class="output-tag">Livestock feed intake</span>
+          <span class="output-tag">Rearing parameters</span>
+          <span class="output-tag">Manure management systems</span>
+          <span class="output-tag">Animal weight</span>
+        </div>
+      </div>
+
+      <!-- Environmental Footprint -->
+      <div class="output-category">
+        <div class="output-category-header output-env">
+          <i class="fas fa-leaf"></i>
+          <h3>Environmental Footprint</h3>
+        </div>
+        <div class="output-tags">
+          <span class="output-tag tag-env">Greenhouse gas emissions</span>
+          <span class="output-tag tag-env">Biodiversity impact</span>
+          <span class="output-tag tag-env">Water consumption</span>
+          <span class="output-tag tag-env">Water pollution</span>
+        </div>
+      </div>
+
+      <!-- Economic Performance -->
+      <div class="output-category">
+        <div class="output-category-header output-econ">
+          <i class="fas fa-euro-sign"></i>
+          <h3>Economic Performance</h3>
+        </div>
+        <div class="output-tags">
+          <span class="output-tag tag-econ">Price premium</span>
+          <span class="output-tag tag-econ">Added value</span>
+          <span class="output-tag tag-econ">Operating margin</span>
+          <span class="output-tag tag-econ">Labour to product ratio</span>
+        </div>
+      </div>
+
+      <!-- Social Performance -->
+      <div class="output-category">
+        <div class="output-category-header output-social">
+          <i class="fas fa-users"></i>
+          <h3>Social Performance</h3>
+        </div>
+        <div class="output-tags">
+          <span class="output-tag tag-social">Generational renewal</span>
+          <span class="output-tag tag-social">Farmer education</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ===== RESOURCES ===== -->
+    <div class="project-section">
+      <h2><i class="fas fa-external-link-alt" style="margin-right:8px;"></i>Resources</h2>
+      <div class="resource-links">
+        <a class="resource-card" href="https://github.com/sarah-huet" target="_blank">
+          <i class="fab fa-github"></i>
+          <div>
+            <strong>GitHub Repository</strong>
+            <p style="font-size:0.83em; color:#666; margin:0;">Source code (coming soon)</p>
+          </div>
+        </a>
+        <a class="resource-card" href="cv.html">
+          <i class="fas fa-file-alt"></i>
+          <div>
+            <strong>Related Publications</strong>
+            <p style="font-size:0.83em; color:#666; margin:0;">See the CV page</p>
+          </div>
+        </a>
+        <a class="resource-card" href="media.html">
+          <i class="fas fa-video"></i>
+          <div>
+            <strong>Conference Talks</strong>
+            <p style="font-size:0.83em; color:#666; margin:0;">Watch presentations</p>
+          </div>
+        </a>
+      </div>
+    </div>
+
+  </main>
+
+</div>
+
+<!-- Mobile sidebar toggle -->
+<button class="sidebar-toggle" id="sidebarToggle">
+  <i class="fas fa-bars"></i>
+</button>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
