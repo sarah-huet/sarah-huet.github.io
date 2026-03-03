@@ -1,688 +1,898 @@
 html_content = """<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - Sarah HUET, PhD</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: #f4f6f8;
-            color: #222;
-            font-size: 14px;
-            line-height: 1.6;
-        }
-        a { color: #2e7d5e; text-decoration: none; }
-        a:hover { text-decoration: underline; }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sarah HUET – CV</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      font-size: 14px;
+      color: #222;
+      background: #f4f6fb;
+    }
 
-        /* HEADER */
-        header {
-            background: linear-gradient(135deg, #2e7d5e 0%, #1a4f3a 100%);
-            color: white;
-            padding: 40px 50px 30px 50px;
-            display: flex;
-            align-items: center;
-            gap: 40px;
-        }
-        .header-avatar {
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 38px;
-            flex-shrink: 0;
-            border: 3px solid rgba(255,255,255,0.5);
-        }
-        .header-text h1 {
-            font-size: 32px;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
-        .header-text h2 {
-            font-size: 16px;
-            font-weight: 400;
-            color: #a8d5c2;
-            margin-top: 4px;
-            letter-spacing: 0.5px;
-        }
-        .header-text p {
-            margin-top: 10px;
-            font-size: 13px;
-            color: #d4ede5;
-            max-width: 700px;
-            line-height: 1.5;
-        }
+    /* HEADER */
+    header {
+      background: linear-gradient(135deg, #22427f 0%, #2d5aa0 100%);
+      color: #fff;
+      padding: 36px 48px 28px 48px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.4em;
+      font-weight: 800;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+    header h2 {
+      font-size: 1.15em;
+      font-weight: 400;
+      color: #b8ccf5;
+      margin-bottom: 10px;
+    }
+    header p.tagline {
+      font-style: italic;
+      font-size: 0.97em;
+      color: #d4e0f7;
+      max-width: 680px;
+      margin: 0 auto 14px auto;
+      line-height: 1.6;
+    }
+    header .contacts {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-top: 8px;
+    }
+    header .contacts a {
+      color: #b8d0f8;
+      text-decoration: none;
+      font-size: 0.93em;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: color 0.2s;
+    }
+    header .contacts a:hover { color: #fff; }
+    .icon { font-style: normal; font-size: 1em; }
 
-        /* LAYOUT */
-        .container {
-            display: grid;
-            grid-template-columns: 280px 1fr;
-            gap: 0;
-            max-width: 1100px;
-            margin: 0 auto;
-            background: white;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.10);
-        }
+    /* LAYOUT */
+    .wrapper {
+      display: flex;
+      max-width: 1200px;
+      margin: 0 auto;
+      gap: 0;
+    }
 
-        /* SIDEBAR */
-        .sidebar {
-            background: #f0f5f2;
-            padding: 30px 22px;
-            border-right: 1px solid #dde8e3;
-        }
-        .sidebar-section {
-            margin-bottom: 28px;
-        }
-        .sidebar-section h3 {
-            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: #2e7d5e;
-            border-bottom: 2px solid #2e7d5e;
-            padding-bottom: 5px;
-            margin-bottom: 12px;
-        }
-        .sidebar-section ul {
-            list-style: none;
-            padding: 0;
-        }
-        .sidebar-section ul li {
-            font-size: 13px;
-            color: #444;
-            padding: 3px 0 3px 14px;
-            position: relative;
-            line-height: 1.5;
-        }
-        .sidebar-section ul li::before {
-            content: '▸';
-            color: #2e7d5e;
-            position: absolute;
-            left: 0;
-            font-size: 11px;
-            top: 4px;
-        }
-        .tag-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-top: 4px;
-        }
-        .tag {
-            background: #2e7d5e;
-            color: white;
-            border-radius: 12px;
-            padding: 3px 10px;
-            font-size: 11px;
-            font-weight: 600;
-        }
-        .tag.light {
-            background: #c8e6da;
-            color: #1a4f3a;
-        }
-        .lang-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 6px;
-        }
-        .lang-label {
-            font-size: 13px;
-            font-weight: 600;
-            color: #333;
-            min-width: 60px;
-        }
-        .lang-level {
-            font-size: 12px;
-            color: #666;
-        }
-        .lang-bar {
-            flex: 1;
-            background: #dde8e3;
-            border-radius: 4px;
-            height: 7px;
-            overflow: hidden;
-        }
-        .lang-bar-fill {
-            height: 100%;
-            background: #2e7d5e;
-            border-radius: 4px;
-        }
-        .contact-item {
-            font-size: 12.5px;
-            color: #444;
-            margin-bottom: 6px;
-            display: flex;
-            align-items: flex-start;
-            gap: 7px;
-        }
-        .contact-icon {
-            color: #2e7d5e;
-            font-weight: bold;
-            flex-shrink: 0;
-            min-width: 16px;
-        }
+    /* SIDEBAR */
+    aside {
+      width: 270px;
+      min-width: 230px;
+      background: #1e3a6e;
+      color: #e8eef8;
+      padding: 30px 22px;
+      flex-shrink: 0;
+    }
+    aside h3 {
+      font-size: 0.8em;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #7fa8e8;
+      margin-bottom: 12px;
+      margin-top: 24px;
+      border-bottom: 1px solid #2d5097;
+      padding-bottom: 5px;
+    }
+    aside h3:first-child { margin-top: 0; }
 
-        /* MAIN */
-        .main {
-            padding: 30px 36px;
-        }
-        .section {
-            margin-bottom: 32px;
-        }
-        .section h2 {
-            font-size: 15px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: #2e7d5e;
-            border-bottom: 2px solid #2e7d5e;
-            padding-bottom: 5px;
-            margin-bottom: 16px;
-        }
+    /* Languages */
+    .lang-item { margin-bottom: 10px; }
+    .lang-label { display: flex; justify-content: space-between; font-size: 0.88em; margin-bottom: 3px; }
+    .lang-bar { background: #2d4d8a; border-radius: 4px; height: 6px; }
+    .lang-bar-fill { background: #5b9bd5; height: 6px; border-radius: 4px; }
 
-        /* EXPERIENCE ENTRIES */
-        .entry {
-            display: grid;
-            grid-template-columns: 130px 1fr;
-            gap: 0 16px;
-            margin-bottom: 18px;
-            padding-bottom: 18px;
-            border-bottom: 1px solid #eef2f0;
-        }
-        .entry:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-        .entry-date {
-            font-size: 12px;
-            font-weight: 700;
-            color: #2e7d5e;
-            padding-top: 2px;
-            line-height: 1.4;
-        }
-        .entry-content h4 {
-            font-size: 14px;
-            font-weight: 700;
-            color: #1a1a1a;
-            margin-bottom: 2px;
-        }
-        .entry-content .entry-org {
-            font-size: 12.5px;
-            color: #888;
-            font-style: italic;
-            margin-bottom: 5px;
-        }
-        .entry-content .entry-subject {
-            font-size: 12.5px;
-            font-weight: 600;
-            color: #2e7d5e;
-            margin-bottom: 5px;
-        }
-        .entry-content p {
-            font-size: 13px;
-            color: #555;
-            line-height: 1.55;
-        }
-        .entry-content ul {
-            margin: 5px 0 0 0;
-            padding-left: 16px;
-        }
-        .entry-content ul li {
-            font-size: 13px;
-            color: #555;
-            line-height: 1.55;
-            margin-bottom: 2px;
-        }
+    /* Skills */
+    .skill-item {
+      background: #2a4a80;
+      border-left: 3px solid #5b9bd5;
+      padding: 7px 10px;
+      margin-bottom: 7px;
+      border-radius: 3px;
+      font-size: 0.86em;
+      line-height: 1.5;
+    }
+    .skill-item strong { color: #a8c8f0; display: block; margin-bottom: 2px; }
 
-        /* EDUCATION */
-        .edu-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-        }
-        .edu-card {
-            background: #f0f5f2;
-            border-left: 4px solid #2e7d5e;
-            border-radius: 4px;
-            padding: 10px 14px;
-        }
-        .edu-card .edu-year {
-            font-size: 12px;
-            font-weight: 700;
-            color: #2e7d5e;
-        }
-        .edu-card .edu-degree {
-            font-size: 13.5px;
-            font-weight: 700;
-            color: #222;
-            margin: 2px 0;
-        }
-        .edu-card .edu-school {
-            font-size: 12px;
-            color: #777;
-            font-style: italic;
-        }
+    /* Tags */
+    .tag-list { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+    .tag {
+      background: #2d5097;
+      color: #c5d8f5;
+      border-radius: 12px;
+      padding: 3px 11px;
+      font-size: 0.8em;
+    }
 
-        /* PUBLICATIONS */
-        .pub-item {
-            margin-bottom: 10px;
-            padding-left: 14px;
-            border-left: 3px solid #a8d5c2;
-            font-size: 12.5px;
-            color: #444;
-            line-height: 1.55;
-        }
-        .pub-item .pub-label {
-            display: inline-block;
-            background: #2e7d5e;
-            color: white;
-            border-radius: 3px;
-            padding: 1px 7px;
-            font-size: 10px;
-            font-weight: 700;
-            margin-bottom: 3px;
-            text-transform: uppercase;
-        }
+    /* MAIN */
+    main {
+      flex: 1;
+      padding: 30px 36px;
+      background: #f7f9fd;
+    }
 
-        /* REFERENCES */
-        .ref-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 14px;
-        }
-        .ref-card {
-            background: #f0f5f2;
-            border-radius: 6px;
-            padding: 14px 16px;
-            border: 1px solid #dde8e3;
-        }
-        .ref-card h4 {
-            font-size: 14px;
-            font-weight: 700;
-            color: #1a4f3a;
-        }
-        .ref-card p {
-            font-size: 12.5px;
-            color: #666;
-            margin-top: 2px;
-        }
-        .ref-card a {
-            font-size: 12px;
-        }
+    /* Section titles */
+    .section-title {
+      font-size: 1.12em;
+      font-weight: 700;
+      color: #22427f;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      border-bottom: 2px solid #22427f;
+      padding-bottom: 5px;
+      margin-bottom: 16px;
+      margin-top: 30px;
+    }
+    .section-title:first-child { margin-top: 0; }
 
-        /* MANDATES */
-        .mandate-item {
-            background: #f9fbfa;
-            border-left: 3px solid #2e7d5e;
-            border-radius: 3px;
-            padding: 8px 12px;
-            margin-bottom: 10px;
-            font-size: 13px;
-            color: #444;
-            line-height: 1.5;
-        }
-        .mandate-item strong {
-            display: block;
-            color: #1a4f3a;
-            font-size: 13px;
-            margin-bottom: 3px;
-        }
+    /* Key capabilities */
+    .capabilities-list {
+      list-style: none;
+      padding: 0;
+    }
+    .capabilities-list li {
+      padding: 8px 12px 8px 16px;
+      border-left: 4px solid #5b9bd5;
+      background: #eef3fb;
+      margin-bottom: 8px;
+      border-radius: 3px;
+      font-size: 0.93em;
+      line-height: 1.55;
+    }
+    .capabilities-list li strong { color: #22427f; }
 
-        footer {
-            background: #1a4f3a;
-            color: #a8d5c2;
-            text-align: center;
-            padding: 14px;
-            font-size: 12px;
-        }
+    /* Experience cards */
+    .exp-card {
+      background: #fff;
+      border: 1px solid #d5e1f5;
+      border-radius: 6px;
+      padding: 16px 18px;
+      margin-bottom: 14px;
+      box-shadow: 0 1px 4px rgba(34,66,127,0.06);
+    }
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .exp-title { font-weight: 700; font-size: 1em; color: #22427f; }
+    .exp-dates {
+      font-size: 0.85em;
+      color: #fff;
+      background: #22427f;
+      padding: 2px 10px;
+      border-radius: 10px;
+      white-space: nowrap;
+    }
+    .exp-org { font-size: 0.88em; color: #555; font-style: italic; margin-top: 2px; }
+    .exp-pi { font-size: 0.83em; color: #7fa8e8; margin-bottom: 6px; }
+    .exp-focus {
+      font-size: 0.87em;
+      color: #22427f;
+      font-weight: 600;
+      background: #eef3fb;
+      border-left: 3px solid #5b9bd5;
+      padding: 4px 10px;
+      margin: 8px 0 6px 0;
+      border-radius: 2px;
+    }
+    .exp-body { font-size: 0.9em; line-height: 1.6; color: #333; margin-top: 6px; }
+    .exp-body ul { margin: 6px 0 0 18px; }
+    .exp-body ul li { margin-bottom: 3px; }
+    .exp-body ul li strong { color: #22427f; }
 
-        @media (max-width: 800px) {
-            .container { grid-template-columns: 1fr; }
-            header { flex-direction: column; text-align: center; }
-            .edu-grid, .ref-grid { grid-template-columns: 1fr; }
-            .entry { grid-template-columns: 1fr; }
-        }
-    </style>
+    /* Education grid */
+    .edu-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .edu-card {
+      background: #fff;
+      border: 1px solid #d5e1f5;
+      border-radius: 6px;
+      padding: 12px 14px;
+      box-shadow: 0 1px 3px rgba(34,66,127,0.05);
+    }
+    .edu-degree { font-weight: 700; font-size: 0.95em; color: #22427f; }
+    .edu-school { font-size: 0.87em; color: #555; font-style: italic; margin-top: 2px; }
+    .edu-year {
+      font-size: 0.82em;
+      color: #fff;
+      background: #5b9bd5;
+      display: inline-block;
+      padding: 1px 9px;
+      border-radius: 9px;
+      margin-top: 5px;
+    }
+
+    /* Publications */
+    .pub-list { list-style: none; padding: 0; }
+    .pub-list li {
+      background: #fff;
+      border: 1px solid #d5e1f5;
+      border-radius: 5px;
+      padding: 11px 14px;
+      margin-bottom: 9px;
+      font-size: 0.9em;
+      line-height: 1.6;
+      box-shadow: 0 1px 3px rgba(34,66,127,0.04);
+    }
+    .pub-list li a { color: #2d5aa0; text-decoration: none; }
+    .pub-list li a:hover { text-decoration: underline; }
+    .pub-label {
+      display: inline-block;
+      font-size: 0.77em;
+      font-weight: 700;
+      padding: 1px 8px;
+      border-radius: 8px;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+    .label-review { background: #fff3cd; color: #856404; }
+    .label-published { background: #d4edda; color: #155724; }
+    .label-book { background: #d1ecf1; color: #0c5460; }
+
+    /* Conferences */
+    .conf-list { list-style: none; padding: 0; }
+    .conf-list li {
+      background: #fff;
+      border-left: 4px solid #5b9bd5;
+      padding: 9px 14px;
+      margin-bottom: 8px;
+      font-size: 0.9em;
+      line-height: 1.55;
+      border-radius: 3px;
+      box-shadow: 0 1px 3px rgba(34,66,127,0.04);
+    }
+    .conf-type {
+      display: inline-block;
+      font-size: 0.78em;
+      font-weight: 700;
+      padding: 1px 8px;
+      border-radius: 8px;
+      margin-left: 6px;
+      vertical-align: middle;
+      background: #cce5ff;
+      color: #004085;
+    }
+
+    /* Mandates */
+    .mandate-list { list-style: none; padding: 0; }
+    .mandate-list li {
+      background: #fff;
+      border: 1px solid #d5e1f5;
+      border-radius: 5px;
+      padding: 10px 14px;
+      margin-bottom: 8px;
+      font-size: 0.9em;
+      line-height: 1.6;
+      box-shadow: 0 1px 3px rgba(34,66,127,0.04);
+    }
+    .mandate-list li strong { color: #22427f; }
+
+    /* References */
+    .ref-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .ref-card {
+      background: #fff;
+      border: 1px solid #d5e1f5;
+      border-radius: 6px;
+      padding: 14px 16px;
+      box-shadow: 0 1px 3px rgba(34,66,127,0.05);
+    }
+    .ref-name { font-weight: 700; color: #22427f; font-size: 1em; }
+    .ref-role { color: #555; font-size: 0.88em; font-style: italic; margin-bottom: 6px; }
+    .ref-card a { color: #2d5aa0; text-decoration: none; font-size: 0.9em; }
+    .ref-card a:hover { text-decoration: underline; }
+    .ref-phone { font-size: 0.88em; color: #444; margin-top: 3px; }
+
+    @media (max-width: 800px) {
+      .wrapper { flex-direction: column; }
+      aside { width: 100%; }
+      .edu-grid, .ref-grid { grid-template-columns: 1fr; }
+      main { padding: 20px 16px; }
+    }
+  </style>
 </head>
 <body>
 
+<!-- HEADER -->
 <header>
-    <div class="header-avatar">🌿</div>
-    <div class="header-text">
-        <h1>Sarah HUET, PhD</h1>
-        <h2>Agri-food System Researcher</h2>
-        <p>Young researcher bridging hands-on practice, ecology, and economics to study and model the transition of food systems from farm to fork. Former farm worker, cook, and nutritionist turned environmental and economics scientist, with expertise in quantitative data analysis, modeling, and visualization to support evidence-based agri-food policies.</p>
-    </div>
+  <h1>Sarah HUET, PhD</h1>
+  <h2>Agri-food Ecology &amp; Economics</h2>
+  <p class="tagline">Early career researcher bridging ecology and economics, with a hands-on practice background,<br/>to study, model, and leverage the transition of food systems.</p>
+  <div class="contacts">
+    <a href="mailto:sarah.huet@inrae.fr">✉ sarah.huet@inrae.fr</a>
+    <a href="https://sarah-huet.github.io" target="_blank">🌐 sarah-huet.github.io</a>
+    <a href="https://orcid.org/0000-0002-5449-6959" target="_blank">🔗 ORCID</a>
+    <a href="https://github.com/sarah-huet" target="_blank">⌨ github.com/sarah-huet</a>
+    <a href="https://www.linkedin.com/in/sarah-huet-phd/" target="_blank">⌨ LinkedIn<a>
+  </div>
 </header>
 
-<div class="container">
-    <!-- SIDEBAR -->
-    <aside class="sidebar">
+<div class="wrapper">
 
-        <div class="sidebar-section">
-            <h3>Languages</h3>
-            <div class="lang-item">
-                <span class="lang-label">French</span>
-                <div class="lang-bar"><div class="lang-bar-fill" style="width:100%"></div></div>
-                <span class="lang-level">Native</span>
-            </div>
-            <div class="lang-item">
-                <span class="lang-label">English</span>
-                <div class="lang-bar"><div class="lang-bar-fill" style="width:85%"></div></div>
-                <span class="lang-level">Proficient</span>
-            </div>
-        </div>
+  <!-- SIDEBAR -->
+  <aside>
+    <h3>Languages</h3>
+    <div class="lang-item">
+      <div class="lang-label"><span>French</span><span>Native</span></div>
+      <div class="lang-bar"><div class="lang-bar-fill" style="width:100%"></div></div>
+    </div>
+    <div class="lang-item">
+      <div class="lang-label"><span>English</span><span>Fluent</span></div>
+      <div class="lang-bar"><div class="lang-bar-fill" style="width:88%"></div></div>
+    </div>
+    <div class="lang-item">
+      <div class="lang-label"><span>Spanish</span><span>Beginner</span></div>
+      <div class="lang-bar"><div class="lang-bar-fill" style="width:12%"></div></div>
+    </div>
 
-        <div class="sidebar-section">
-            <h3>Data & Modeling</h3>
-            <ul>
-                <li>R & Python reproducible workflows</li>
-                <li>Environmental impact modeling (GHG, land use, biodiversity, water)</li>
-                <li>Linear, GLM, mixed models</li>
-                <li>Multivariate analysis</li>
-                <li>Network inference</li>
-                <li>Multi-dataset integration</li>
-                <li>Panel data & causal inference</li>
-                <li>Complex output visualization</li>
-            </ul>
-        </div>
+    <h3>Core Skills</h3>
+    <div class="skill-item">
+      <strong>Data &amp; Econometrics</strong>
+      Proficiency in R, reproducible workflows, multi-dataset integration, multi-criteria environmental footprint assessment, causal inference, panel data econometrics
+    </div>
+    <div class="skill-item">
+      <strong>Environmental Impact Assessment</strong>
+      Extensive experience computing LCA-inspired "scope 3" footprints, GHG emissions (IPCC Tier 2-3), and biodiversity impact indicators from raw agricultural statistics.
+    </div>
+    <div class="skill-item">
+      <strong>Policy-Oriented Interests</strong>
+      Multiple interactions with policy-makers and stakeholders; Research oriented to inform CAP reform and environmental labeling.
+    </div>
+    <div class="skill-item">
+      <strong>Adaptability &amp; Leadership</strong>
+      Staff/intern supervision, multidisciplinary task forces, science communication
+    </div>
 
-        <div class="sidebar-section">
-            <h3>Science Communication</h3>
-            <ul>
-                <li>Oral presentations at international scientific conferences</li>
-                <li>National stakeholder audiences</li>
-                <li>Peer-reviewed scientific writing (5 published + 1 under review)</li>
-                <li>Science outreach & popularization</li>
-            </ul>
-        </div>
+    <h3>Attitudes</h3>
+    <div class="tag-list">
+      <span class="tag">Interdisciplinary</span>
+      <span class="tag">Rigorous</span>
+      <span class="tag">Policy-minded</span>
+      <span class="tag">Collaborative</span>
+      <span class="tag">Curious</span>
+      <span class="tag">Communicator</span>
+    </div>
 
-        <div class="sidebar-section">
-            <h3>Collaboration</h3>
-            <ul>
-                <li>Interdisciplinary teams (ecology, economics, policy)</li>
-                <li>Expert panel on biodiversity impact of certified food products</li>
-            </ul>
-        </div>
-
-        <div class="sidebar-section">
-            <h3>Attitudes</h3>
-            <div class="tag-list">
-                <span class="tag">Organized</span>
-                <span class="tag">Adaptability</span>
-                <span class="tag">Autonomy</span>
-                <span class="tag">Team work</span>
-                <span class="tag">Pedagogy</span>
-                <span class="tag">Benevolence</span>
-                <span class="tag">Curiosity</span>
-                <span class="tag">Perseverance</span>
-            </div>
-        </div>
-
-        <div class="sidebar-section">
-            <h3>Hobbies</h3>
-            <ul>
-                <li>🥾 Hiking (Pyrenees, Alps, Jura, Morvan)</li>
-                <li>🐴 Horse riding with Socrate</li>
-                <li>🛶 Canoe (Loire, Dordogne, Rhône)</li>
-                <li>🌿 Botany & Ornithology</li>
-            </ul>
-        </div>
-
-        <div class="sidebar-section">
-            <h3>Licence</h3>
-            <ul>
-                <li>French driving licence</li>
-            </ul>
-        </div>
-
-    </aside>
-
-    <!-- MAIN CONTENT -->
-    <main class="main">
-
-        <!-- EDUCATION -->
-        <div class="section">
-            <h2>Education</h2>
-            <div class="edu-grid">
-                <div class="edu-card">
-                    <div class="edu-year">Dec. 2022</div>
-                    <div class="edu-degree">PhD in Population Biology & Ecology</div>
-                    <div class="edu-school">University of Bourgogne France-Comté, France</div>
-                </div>
-                <div class="edu-card">
-                    <div class="edu-year">2019</div>
-                    <div class="edu-degree">M.S. in Plant Biology</div>
-                    <div class="edu-school">University of Angers, France</div>
-                </div>
-                <div class="edu-card">
-                    <div class="edu-year">2017</div>
-                    <div class="edu-degree">B.S. in Plant Production</div>
-                    <div class="edu-school">University of Angers, France</div>
-                </div>
-                <div class="edu-card">
-                    <div class="edu-year">2015</div>
-                    <div class="edu-degree">B.S. in Human Nutrition & Dietetics</div>
-                    <div class="edu-school">ICOGES School in Angers, France</div>
-                </div>
-                <div class="edu-card">
-                    <div class="edu-year">2011</div>
-                    <div class="edu-degree">Professional Certificate of French Cook</div>
-                    <div class="edu-school">Lycée Hôtelier de Fontiville, France</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- PROFESSIONAL EXPERIENCES -->
-        <div class="section">
-            <h2>Professional Experiences — Academic Research</h2>
-
-            <div class="entry">
-                <div class="entry-date">2023 – present</div>
-                <div class="entry-content">
-                    <h4>Post-doc in Agri-food Economics</h4>
-                    <div class="entry-org">CESAER lab, INRAE, Institut Agro, France — Supervisor: Valentin BELLASSEN</div>
-                    <div class="entry-subject">Modeling agricultural practices from accountancy data and public statistics and assessing their environmental footprint</div>
-                    <p>Using the Farm Accountancy Data Network and available agricultural public statistics, we develop a model to infer agricultural practices effectively implemented in farms, and estimate biodiversity impact, greenhouse gas emissions, water consumption and pollution at product and farm scale. Applied on a sample of more than 5,500 French farms to compare certified and non-certified productions using a matching procedure. Also contributed to an expert panel mandated by public authorities.</p>
-                </div>
-            </div>
-
-            <div class="entry">
-                <div class="entry-date">2019 – 2022</div>
-                <div class="entry-content">
-                    <h4>PhD in Microbial Ecology</h4>
-                    <div class="entry-org">Agroecology Department, Univ. of Bourgogne France-Comté — Supervisors: Laurent PHILIPPOT, Aymé SPOR & Sana ROMDHANE</div>
-                    <div class="entry-subject">Deciphering Biotic Interactions and their role in Soil Microbial Community Assembly and Functions</div>
-                    <p>Using an innovative experimental approach and a range of statistical techniques (linear, generalized linear and mixed models, multivariate analysis, network inference, and multi-dataset integration), we causally infer the specific effects of biotic interactions, spatial distancing and community characteristics on both microbial community assembly and functions.</p>
-                </div>
-            </div>
-
-            <div class="entry">
-                <div class="entry-date">2019</div>
-                <div class="entry-content">
-                    <h4>Intern — Host–Parasite–Microbiome Interaction Analysis</h4>
-                    <div class="entry-org">Laboratory of Plant Biology and Pathology, University of Nantes — Supervisors: Lucie POULIN & Jean-Bernard POUVREAU</div>
-                    <div class="entry-subject">P. ramosa host influence on seed phenotype and microbial communities</div>
-                </div>
-            </div>
-
-            <div class="entry">
-                <div class="entry-date">2018</div>
-                <div class="entry-content">
-                    <h4>Intern — Bioinformatic Meta-analysis</h4>
-                    <div class="entry-org">Research Institute in Horticulture & Seeds, University of Angers — Supervisors: Matthieu BARRET, Gloria TORRES & Martial BRIAND</div>
-                    <div class="entry-subject">Meta-analysis of 12 studies about seed microbial communities</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- SCIENCE COMMUNICATION -->
-        <div class="section">
-            <h2>Science Communication</h2>
-            <div class="entry">
-                <div class="entry-date">2013 – present</div>
-                <div class="entry-content">
-                    <h4>Science Communicator to General Audiences</h4>
-                    <ul>
-                        <li>Experimentarium network, Univ. of Bourgogne France-Comté, France</li>
-                        <li>Preventive Medicine Service, University of Angers, France</li>
-                        <li>NGO "Les Petits Débrouillards", Angers, France</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- NUTRITION COOKING FARMING -->
-        <div class="section">
-            <h2>Nutrition, Cooking & Farming</h2>
-
-            <div class="entry">
-                <div class="entry-date">2013 – 2015</div>
-                <div class="entry-content">
-                    <h4>Nutritionist Intern — Public Catering, Clinics & Hospitals</h4>
-                    <div class="entry-org">Loire Valley and Paris area, France</div>
-                </div>
-            </div>
-
-            <div class="entry">
-                <div class="entry-date">2010 – 2013</div>
-                <div class="entry-content">
-                    <h4>Cook — Traditional Restaurants & Collective Catering</h4>
-                    <div class="entry-org">French Alps & Loire Valley, France</div>
-                </div>
-            </div>
-
-            <div class="entry">
-                <div class="entry-date">2007 – 2010</div>
-                <div class="entry-content">
-                    <h4>Cultivator & Merchant — Vineyard, Orchard, Greenhouse</h4>
-                    <div class="entry-org">Bordeaux region & Loire Valley, France</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ADDITIONAL MANDATES -->
-        <div class="section">
-            <h2>Additional Mandates</h2>
-
-            <div class="mandate-item">
-                <strong>Group Leader — The Shifters NGO (present)</strong>
-                Coordinate a multidisciplinary team of a dozen members, overseeing research synthesis and policy drafting, to develop three national-scale policy proposals for an equitable transition of the French agri-food system, intended for integration into candidate platforms for the 2027 presidential election.
-            </div>
-
-            <div class="mandate-item">
-                <strong>PhD Student Representative (2-year mandate)</strong>
-                Elected member at the research unit functioning board to raise and solve issues faced by PhD students, including defending the right to do science communication alongside research duties.
-            </div>
-
-            <div class="mandate-item">
-                <strong>President — Angers Plant Biology Student Association (1 year)</strong>
-                Took responsibility for the science faculty green area development.
-            </div>
-        </div>
-
-        <!-- PEER-REVIEWED ARTICLES -->
-        <div class="section">
-            <h2>Peer-Reviewed Articles</h2>
-
-            <div class="pub-item">
-                <span class="pub-label">In Press</span><br>
-                Huet S., Romdhane S., Breuil M-C., Bru D., Spor A., Philippot L. (2025) Insights into the Biotic Factors Driving the Outcome of Coalescence Events Between Bacterial Communities. <em>ISME Journal</em>.
-            </div>
-
-            <div class="pub-item">
-                <span class="pub-label">Under Review</span><br>
-                Huet S., Diallo A., Regolo J., Ihasusta A., Arnaud L., Bellassen V. (2025) Estimating Biodiversity Impact from Agricultural Statistics: an application to Food Quality Schemes in France. <em>Ecological Economics</em>. Available at SSRN: <a href="http://dx.doi.org/10.2139/ssrn.5217233">doi:10.2139/ssrn.5217233</a>
-            </div>
-
-            <div class="pub-item">
-                <span class="pub-label">2024</span><br>
-                Romdhane S., Huet S., Spor A., Bru D., Breuil M-C., Philippot L. (2024) Manipulating the Physical Distance Between Cells During Soil Colonization Reveals the Importance of Biotic Interactions in Microbial Community Assembly. <em>Environmental Microbiome</em> 19, 18. <a href="https://doi.org/10.1186/s40793-024-00559-4">doi:10.1186/s40793-024-00559-4</a>
-            </div>
-
-            <div class="pub-item">
-                <span class="pub-label">2023</span><br>
-                Huet S., Romdhane S., Breuil M-C., Bru D., Mounier A., Spor A., Philippot L. (2023) Experimental community coalescence sheds light on microbial interactions in soil and restores impaired functions. <em>Microbiome</em> 11, 42. <a href="https://doi.org/10.1186/s40168-023-01480-7">doi:10.1186/s40168-023-01480-7</a>
-            </div>
-
-            <div class="pub-item">
-                <span class="pub-label">2020</span><br>
-                Huet S., Pouvreau J-B., Delage E., Delgrange S., Marais C., Bahut M., Delavault P., Simier P. and Poulin L. (2020) Populations of the Parasitic Plant <em>Phelipanche ramosa</em> Influence Their Seed Microbiota. <em>Frontiers in Plant Science</em>. 11:1075. <a href="https://doi.org/10.3389/fpls.2020.01075">doi:10.3389/fpls.2020.01075</a>
-            </div>
-        </div>
-
-        <!-- BOOKS & REPORTS -->
-        <div class="section">
-            <h2>Books &amp; Reports</h2>
-
-            <div class="pub-item">
-                <span class="pub-label">Report 2025</span><br>
-                Ulrich C., ..., Huet S. et al. Agriculture, aquaculture and fishing: impact of food standards on biodiversity — Summary of the scientific report of the study. INRAE; Ifremer. 2025, 12 p. <a href="https://doi.org/10.17180/91tv-5758">doi:10.17180/91tv-5758</a>
-            </div>
-
-            <div class="pub-item">
-                <span class="pub-label">Book Chapter 2021</span><br>
-                Pouvreau J.-B., Poulin L., Huet S., Delavault P. Strigolactone-Like Bioactivity via Parasitic Plant Germination Bioassay. <em>Strigolactones</em>, 2309 (1), Springer US, pp.59–73, 2021, Methods in Molecular Biology. <a href="https://doi.org/10.1007/978-1-0716-1429-7_6">doi:10.1007/978-1-0716-1429-7_6</a>
-            </div>
-        </div>
-
-        <!-- CONFERENCES -->
-        <div class="section">
-            <h2>Conferences</h2>
-
-            <div class="pub-item">
-                <span class="pub-label">Oral 2025</span><br>
-                Huet S., Bockstaller C., Sirami S. "Approaches to quantify the impact of agricultural products on biodiversity." Congress of the collective expertise BiodivLabel, 30 April 2025, Paris, France.
-            </div>
-
-            <div class="pub-item">
-                <span class="pub-label">Oral 2021</span><br>
-                Huet S., Romdhane S., Breuil M-C., Bru D., Mounier A., Spor A., Philippot L. "Experimental community coalescence sheds light on microbial interactions in soil and restores impaired functions." 10th Symposium of the Microbial Ecology Francophone Association, 16 Nov. 2021, Online.
-            </div>
-
-            <div class="pub-item">
-                <span class="pub-label">Poster 2022</span><br>
-                Huet S., Romdhane S., Breuil M-C., Bru D., Mounier A., Spor A., Philippot L. "Experimental community coalescence sheds light on microbial interactions in soil and restores impaired functions." 18th International Symposium on Microbial Ecology, 16 August 2022, Lausanne, Switzerland.
-            </div>
-        </div>
-
-        <!-- REFERENCES -->
-        <div class="section">
-            <h2>References</h2>
-            <div class="ref-grid">
-                <div class="ref-card">
-                    <h4>Laurent PHILIPPOT</h4>
-                    <p>Research Director</p>
-                    <p><a href="mailto:laurent.philippot@inrae.fr">laurent.philippot@inrae.fr</a></p>
-                    <p>+33 380 693 346</p>
-                </div>
-                <div class="ref-card">
-                    <h4>Valentin BELLASSEN</h4>
-                    <p>Research Director</p>
-                    <p><a href="mailto:valentin.bellassen@inrae.fr">valentin.bellassen@inrae.fr</a></p>
-                    <p>+33 380 772 791</p>
-                </div>
-            </div>
-        </div>
-
-    </main>
+    <h3>Interests & Soft Skills</h3>
+    <div class="tag-list">
+      <span class="tag"><b>Endurance & Resilience:</b> Long-distance trekking (Jura 100km), Canoeing (Loire 100km), Horseback expeditions (Mongolia 300km)</span>
+      <span class="tag"><b>Naturalist Fieldwork:</b> Botany & Ornithology</span>
 </div>
 
-<footer>
-    Sarah HUET, PhD &mdash; Agri-food System Researcher &mdash; CV generated 2025
-</footer>
+  </aside>
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- KEY CAPABILITIES -->
+    <div class="section-title">Key Capabilities &amp; Achievements</div>
+    <ul class="capabilities-list">
+      <li><strong>Interdisciplinary Agri-Food Economist &amp; Ecologist:</strong> Unique trajectory from hands-on practitioner to quantitative scientist, bridging the gap between physical environmental footprinting and economic valuation.</li>
+      <li><strong>Pathfinder in Large-Scale Agri-Environmental Assessment:</strong> Developer of the <em>FADN2Footprint</em> R package and the <em>BVIAS</em> model, translating European farm accountancy (FADN) and spatial (LPIS) data into environmental footprints.</li>
+      <li><strong>Demonstrated Policy Impact &amp; Stakeholder Engagement:</strong> Appointed to an expert group for two French ministries, invited to present at DG Agri on FADN/FSDN, and at several stakeholders meetings.</li>
+      <li><strong>Strong Academic Communicator:</strong> Proven track record of high-impact scientific writing (5 peer-reviewed articles in top-tier journals) and delivering presentations at international congresses as well as internal seminars in other labs.</li>
+    </ul>
+
+    <!-- PROFESSIONAL EXPERIENCE -->
+    <div class="section-title">Professional Experience</div>
+
+    <div class="exp-card">
+      <div class="exp-header">
+        <div>
+          <div class="exp-title">Post-doc in Agri-food Economics</div>
+          <div class="exp-org">CESAER lab, INRAE, Institut Agro, France</div>
+          <div class="exp-pi">PI: Valentin BELLASSEN</div>
+        </div>
+        <span class="exp-dates">2023 – Present</span>
+      </div>
+      <div class="exp-focus">→ Inferring agricultural practices and computing environmental footprint from FADN</div>
+      <div class="exp-body">
+        <p>Developed the <strong>BVIAS</strong> model (Biodiversity Value Increment from Agricultural Statistics), which estimates the biodiversity impact of food products from accountancy data and public statistics, calibrated on <em>in situ</em> data from the literature. Applied matching procedures on &gt;5,500 French farms to compare Food Quality Schemes to conventional counterparts, showing that product-type differences outweigh quality-scheme effects.</p>
+        <p style="margin-top:8px;">Currently validating the <strong>FADN2Footprint</strong> R package, a life-cycle-assessment-inspired tool that infers farm practices from the Farm Accountancy Data Network and public statistics, and computes multi-criteria footprints at country, NUTS2, farm, activity and product scales:</p>
+        <ul>
+          <li><strong>Environmental:</strong> GHG emissions, biodiversity impact, water pollution.</li>
+          <li><strong>Economic:</strong> price premium, added value, operating margin, labour-to-product ratio.</li>
+          <li><strong>Social:</strong> generational renewal, farmer education level.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-header">
+        <div>
+          <div class="exp-title">PhD in Microbial Ecology</div>
+          <div class="exp-org">Agroecology department, Univ. of Bourgogne France-Comté, France</div>
+          <div class="exp-pi">PI: Laurent PHILIPPOT</div>
+        </div>
+        <span class="exp-dates">2019 – 2022</span>
+      </div>
+      <div class="exp-focus">→ Deciphering Biotic Interactions and their role in Soil Microbial Community Assembly and Functions</div>
+      <div class="exp-body">
+        Using an innovative experimental approach and a range of statistical techniques (linear, generalized linear and mixed models, multivariate analysis, network inference, and multi-dataset integration), we causally infer the specific effects of biotic interactions, spatial distancing and community characteristics on both microbial community assembly and functions. Our approach could become a standard tool to test ecological theories and to design new microbial engineering strategies.
+      </div>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-header">
+        <div>
+          <div class="exp-title">Internships in Bio-informatics</div>
+          <div class="exp-org">Univ. of Nantes &amp; Univ. of Angers, France</div>
+          <div class="exp-pi">PIs: Lucie POULAIN, Matthieu BARRET</div>
+        </div>
+        <span class="exp-dates">2018 – 2019</span>
+      </div>
+      <div class="exp-body">
+        <ul>
+          <li>2019: Host-parasite-microbiome interaction analysis (<em>P. ramosa</em>).</li>
+          <li>2018: Bio-informatic meta-analysis of seed microbial communities.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-header">
+        <div>
+          <div class="exp-title">Nutrition, Cooking &amp; Farming</div>
+          <div class="exp-org">Paris, Loire Valley, Alps, Bordeaux area – France</div>
+        </div>
+        <span class="exp-dates">2007 – 2017</span>
+      </div>
+      <div class="exp-body">
+        <ul>
+          <li>2013–2017: Nutritionist intern in public catering, clinics, and hospitals. Liberal practitioner.</li>
+          <li>2010–2013: Cook in traditional and bistronomic French restaurants.</li>
+          <li>2007–2010: Cultivator &amp; Merchant in vineyard, orchard, greenhouse.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="section-title">Education</div>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <div class="edu-degree">PhD in Population Biology and Ecology</div>
+        <div class="edu-school">University of Bourgogne France-Comté</div>
+        <div class="edu-year">2023</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-degree">M.S. in Plant Biology</div>
+        <div class="edu-school">University of Angers</div>
+        <div class="edu-year">2019</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-degree">B.S. in Crop Production</div>
+        <div class="edu-school">University of Angers</div>
+        <div class="edu-year">2017</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-degree">B.S. in Human Nutrition &amp; Dietetics</div>
+        <div class="edu-school">ICOGES School in Angers</div>
+        <div class="edu-year">2015</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-degree">Professional Certificate of French Cook</div>
+        <div class="edu-school">Lycée Hotellier de Fontiville</div>
+        <div class="edu-year">2011</div>
+      </div>
+    </div>
+
+    <!-- PUBLICATIONS -->
+    <div class="section-title">Peer-reviewed Articles</div>
+    <ul class="pub-list">
+      <li>
+        <span class="pub-label label-review">Under Review</span>
+        <strong>Huet S.</strong>, Diallo A., Regolo J., Ihasusta A., Arnaud L., Bellassen V. (2025) Estimating Biodiversity Impact from Agricultural Statistics: an application to Food Quality Schemes in France. <em>2nd round review at Ecological Economics</em>.
+        <a href="http://dx.doi.org/10.2139/ssrn.5217233" target="_blank">Preprint doi: 10.2139/ssrn.5217233</a>
+      </li>
+      <li>
+        <span class="pub-label label-published">Published</span>
+        <strong>Huet S.</strong>, Romdhane S., Breuil M-C., Bru D., Spor A., Philippot L. (2025) Insights into the Biotic Factors Driving the Outcome of Coalescence Events Between Bacterial Communities. <em>ISME J.</em>, 5 (1).
+        <a href="https://doi.org/10.1093/ismeco/ycaf048" target="_blank">doi: 10.1093/ismeco/ycaf048</a>
+      </li>
+      <li>
+        <span class="pub-label label-published">Published</span>
+        Romdhane S., <strong>Huet S.</strong>, Spor A., Bru D., Breuil M-C., Philippot L. (2024) Manipulating the Physical Distance Between Cells During Soil Colonization Reveals the Importance of Biotic Interactions in Microbial Community Assembly. <em>Environmental Microbiome</em> 19, 18.
+        <a href="https://dx.doi.org/10.1186/s40793-024-00559-4" target="_blank">doi: 10.1186/s40793-024-00559-4</a>
+      </li>
+      <li>
+        <span class="pub-label label-published">Published</span>
+        <strong>Huet S.</strong>, Romdhane S., Breuil M-C., Bru D., Mounier A., Spor A., Philippot L. (2023) Experimental community coalescence sheds light on microbial interactions in soil and restores impaired functions. <em>Microbiome</em> 11, 42.
+        <a href="https://dx.doi.org/10.1186/s40168-023-01480-7" target="_blank">doi: 10.1186/s40168-023-01480-7</a>
+      </li>
+      <li>
+        <span class="pub-label label-published">Published</span>
+        <strong>Huet S.</strong>, Pouvreau J-B., Delage E., Delgrange S., Marais C., Bahut M., Delavault P., Simier P., Poulin L. (2020) Populations of the Parasitic Plant <em>Phelipanche ramosa</em> Influence Their Seed Microbiota. <em>Front. Plant Sci.</em> 11:1075.
+        <a href="https://doi.org/10.3389/fpls.2020.01075" target="_blank">doi: 10.3389/fpls.2020.01075</a>
+      </li>
+    </ul>
+
+    <div class="section-title">Books &amp; Reports</div>
+    <ul class="pub-list">
+      <li>
+        <span class="pub-label label-book">Report</span>
+        Ulrich C., …, <strong>Huet S.</strong> et al. (2025b) Agriculture, aquaculture and fishing: impact of food standards on biodiversity. Summary of the scientific report. INRAE; Ifremer.
+        <a href="https://dx.doi.org/10.17180/91tv-5758" target="_blank">doi: 10.17180/91tv-5758</a>
+      </li>
+      <li>
+        <span class="pub-label label-book">Report</span>
+        Ulrich C., …, <strong>Huet S.</strong> et al. (2025a) Agriculture, aquaculture et pêche : impacts des modes de production labellisés sur la biodiversité. Rapport scientifique de l'étude. INRAE; Ifremer.
+        <a href="https://dx.doi.org/10.17180/ayg4-0b92" target="_blank">doi: 10.17180/ayg4-0b92</a>
+      </li>
+      <li>
+        <span class="pub-label label-book">Book Chapter</span>
+        Pouvreau J.-B., Poulin L., <strong>Huet S.</strong>, Delavault P. (2021) Strigolactone-Like Bioactivity via Parasitic Plant Germination Bioassay, in: Prandi, C., Cardinale, F. (Eds.) <em>Methods in Molecular Biology</em>, vol 2309, pp. 59–73. Springer US.
+        <a href="https://doi.org/10.1007/978-1-0716-1429-7_6" target="_blank">doi: 10.1007/978-1-0716-1429-7_6</a>
+      </li>
+    </ul>
+
+    <!-- TALKS & PRESENTATIONS SECTION - Add this to the main content area -->
+<!-- TALKS & PRESENTATIONS SECTION -->
+<section class="cv-section">
+  <h2 class="section-title">
+    <span class="section-icon">🎤</span> Talks & Presentations
+  </h2>
+
+  <div class="talks-list">
+
+    <div class="talk-item">
+      <div class="talk-meta">
+        <span class="talk-date">Dec 2025</span>
+        <span class="talk-badge badge-seminar">Internal Seminar</span>
+      </div>
+      <div class="talk-content">
+        <p class="talk-speakers"><strong>Huet S.</strong></p>
+        <p class="talk-title">Presentation of the FADN2Footprint R package.</p>
+        <p class="talk-venue">ODR Tech Coffee Seminar, Observatoire du Développement Rural, INRAE Toulouse</p>
+      </div>
+    </div>
+
+    <div class="talk-item">
+      <div class="talk-meta">
+        <span class="talk-date">Nov 2025</span>
+        <span class="talk-badge badge-policy">Policy — Working Group</span>
+      </div>
+      <div class="talk-content">
+        <p class="talk-speakers">Bellassen V., <strong>Huet S.</strong></p>
+        <p class="talk-title">FADN2Footprint: translating farm accountancy data into environmental footprints.</p>
+        <p class="talk-venue">FSDN Working Group on emissions, DG Agri, European Commission, Brussels</p>
+      </div>
+    </div>
+
+    <div class="talk-item">
+      <div class="talk-meta">
+        <span class="talk-date">Nov 2025</span>
+        <span class="talk-badge badge-stakeholders">Stakeholder — Outreach</span>
+      </div>
+      <div class="talk-content">
+        <p class="talk-speakers">Sirami S., <strong>Huet S.</strong></p>
+        <p class="talk-title">Approaches to quantify the impact of agricultural products on biodiversity.</p>
+        <p class="talk-venue">ODR & INAO Joint Webinar, co-organised by the Observatoire du Développement Rural and INAO</p>
+      </div>
+    </div>
+
+    <div class="talk-item">
+      <div class="talk-meta">
+        <span class="talk-date">Oct 2025</span>
+        <span class="talk-badge badge-stakeholders">Stakeholder — Outreach</span>
+      </div>
+      <div class="talk-content">
+        <p class="talk-speakers"><strong>Huet S.</strong></p>
+        <p class="talk-title">Food labels and biodiversity: what does the science say?</p>
+        <p class="talk-venue">Les Shifters NGO, Local group meeting, Dijon</p>
+      </div>
+    </div>
+
+    <div class="talk-item">
+      <div class="talk-meta">
+        <span class="talk-date">Apr 2025</span>
+        <span class="talk-badge badge-conference">Colloquium — Oral</span>
+      </div>
+      <div class="talk-content">
+        <p class="talk-speakers">Sirami S., Bockstaller C., <strong>Huet S.</strong></p>
+        <p class="talk-title">Approaches to quantify the impact of agricultural products on biodiversity.</p>
+        <p class="talk-venue">BiodivLabel Restitution Colloquium, Paris — Oral presentation
+          <a href="https://depe.hub.inrae.fr/actualites/colloque-de-l-etude-biodivlabel" target="_blank" class="talk-link">🔗 Event page</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="talk-item">
+      <div class="talk-meta">
+        <span class="talk-date">Nov 2024</span>
+        <span class="talk-badge badge-seminar">Seminar</span>
+      </div>
+      <div class="talk-content">
+        <p class="talk-speakers"><strong>Huet S.</strong></p>
+        <p class="talk-title">BVIAS: Biodiversity Footprinting of Agricultural Products.</p>
+        <p class="talk-venue">INRAE Seminar on Biodiversity Indicators and Public Action, Paris</p>
+      </div>
+    </div>
+
+    <div class="talk-item">
+      <div class="talk-meta">
+        <span class="talk-date">Nov 2024</span>
+        <span class="talk-badge badge-policy">Policy — Working Group</span>
+      </div>
+      <div class="talk-content">
+        <p class="talk-speakers"><strong>Huet S.</strong></p>
+        <p class="talk-title">BVIAS: Biodiversity Footprinting of Agricultural Products.</p>
+        <p class="talk-venue">ADEME, presented to the team in charge of environmental labelling of food products, Angers</p>
+      </div>
+    </div>
+
+    <div class="talk-item">
+      <div class="talk-meta">
+        <span class="talk-date">Nov 2024</span>
+        <span class="talk-badge badge-seminar">Internal Seminar</span>
+      </div>
+      <div class="talk-content">
+        <p class="talk-speakers"><strong>Huet S.</strong></p>
+        <p class="talk-title">BVIAS: Biodiversity Footprinting of Agricultural Products.</p>
+        <p class="talk-venue">Dynafor Team Seminar, INRAE Toulouse
+          <a href="https://www.youtube.com/watch?v=bYmsb57kl1w&t=270s" target="_blank" class="talk-link">▶ Watch recording</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="talk-item">
+      <div class="talk-meta">
+        <span class="talk-date">Jun 2024</span>
+        <span class="talk-badge badge-policy">Policy — Lecture</span>
+      </div>
+      <div class="talk-content">
+        <p class="talk-speakers"><strong>Huet S.</strong></p>
+        <p class="talk-title">Food labels and biodiversity: scientific evidence for policy.</p>
+        <p class="talk-venue">Le Lierre NGO of senior public servants, Local group meeting, Dijon</p>
+      </div>
+    </div>
+
+    <div class="talk-item">
+      <div class="talk-meta">
+        <span class="talk-date">Jun 2024</span>
+        <span class="talk-badge badge-policy">Policy — Audition</span>
+      </div>
+      <div class="talk-content">
+        <p class="talk-speakers"><strong>Huet S.</strong></p>
+        <p class="talk-title">Food labels and biodiversity: scientific evidence for territorial policy.</p>
+        <p class="talk-venue">Audition by the Development Council of Dijon Métropole on food labelling</p>
+      </div>
+    </div>
+
+    <div class="talk-item">
+      <div class="talk-meta">
+        <span class="talk-date">Apr 2024</span>
+        <span class="talk-badge badge-policy">Policy — Lecture</span>
+      </div>
+      <div class="talk-content">
+        <p class="talk-speakers"><strong>Huet S.</strong></p>
+        <p class="talk-title">Biodiversity and food labels: scientific foundations.</p>
+        <p class="talk-venue">French Civil Service Training, training session for senior French civil servants on biodiversity and food labels</p>
+      </div>
+    </div>
+
+    <div class="talk-item">
+      <div class="talk-meta">
+        <span class="talk-date">Aug 2022</span>
+        <span class="talk-badge badge-conference">Symposium — Poster</span>
+      </div>
+      <div class="talk-content">
+        <p class="talk-speakers"><strong>Huet S.</strong></p>
+        <p class="talk-title">Experimental community coalescence sheds light on microbial interactions in soil and restores impaired functions.</p>
+        <p class="talk-venue">18th International Symposium on Microbial Ecology, Lausanne, Switzerland</p>
+      </div>
+    </div>
+
+    <div class="talk-item">
+      <div class="talk-meta">
+        <span class="talk-date">Nov 2021</span>
+        <span class="talk-badge badge-conference">Symposium — Oral</span>
+      </div>
+      <div class="talk-content">
+        <p class="talk-speakers"><strong>Huet S.</strong></p>
+        <p class="talk-title">Experimental community coalescence sheds light on microbial interactions in soil and restores impaired functions.</p>
+        <p class="talk-venue">10th Symposium of the Microbial Ecology Francophone Association, Online</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+/* ===== TALKS SECTION STYLES ===== */
+.talks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-left: 3px solid #22427F;
+  margin-left: 10px;
+  padding-left: 0;
+}
+
+.talk-item {
+  display: flex;
+  gap: 16px;
+  padding: 12px 0 12px 20px;
+  position: relative;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background 0.2s;
+}
+
+.talk-item:last-child {
+  border-bottom: none;
+}
+
+.talk-item:hover {
+  background-color: #f7f9ff;
+}
+
+.talk-item::before {
+  content: '';
+  position: absolute;
+  left: -7px;
+  top: 18px;
+  width: 11px;
+  height: 11px;
+  background: #22427F;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 2px #22427F;
+}
+
+.talk-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  min-width: 110px;
+  flex-shrink: 0;
+}
+
+.talk-date {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #22427F;
+  white-space: nowrap;
+}
+
+.talk-badge {
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
+/* Badge color variants */
+.badge-seminar     { background: #fef3c7; color: #92400e; }
+.badge-policy      { background: #d1fae5; color: #065f46; }
+.badge-stakeholders{ background: #dbeafe; color: #1e3a8a; }
+.badge-conference  { background: #fee2e2; color: #991b1b; }
+
+.talk-content {
+  flex: 1;
+}
+
+/* Speaker line */
+.talk-speakers {
+  font-size: 0.82rem;
+  color: #444;
+  margin: 0 0 2px 0;
+  line-height: 1.4;
+}
+
+.talk-speakers strong {
+  color: #22427F;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.talk-title {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin: 0 0 4px 0;
+  line-height: 1.4;
+  font-style: italic;
+}
+
+.talk-venue {
+  font-size: 0.80rem;
+  color: #555;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.talk-link {
+  display: inline-block;
+  margin-left: 8px;
+  color: #22427F;
+  text-decoration: none;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.78rem;
+  border: 1px solid #22427F;
+  padding: 1px 6px;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.talk-link:hover {
+  background: #22427F;
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .talk-item {
+    flex-direction: column;
+    gap: 6px;
+  }
+  .talk-meta {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    min-width: unset;
+  }
+}
+</style>
+
+
+    <!-- ADDITIONAL MANDATES -->
+    <div class="section-title">Additional Mandates</div>
+    <ul class="mandate-list">
+      <li><strong>Group leader in The Shifters NGO (Jun-25 to present):</strong> Coordinate a multidisciplinary team of a dozen members, overseeing research synthesis and policy drafting, to develop three national-scale policy proposals combining efficiency and equitability for a transition of the French agri-food system, intended for integration into candidate platforms for the 2027 presidential election.</li>
+      <li><strong>PhD student representative (2020–2022):</strong> Elected member at the research unit functioning board to raise and solve issues faced by PhD students.</li>
+      <li><strong>Science communication (2013 to present):</strong> Communicating sciences in different contexts, either as conferences, workshops for general audiences or scholars.</li>
+    </ul>
+
+    <!-- REFERENCES -->
+    <div class="section-title">References</div>
+    <div class="ref-grid">
+      <div class="ref-card">
+        <div class="ref-name">Valentin BELLASSEN</div>
+        <div class="ref-role">Research Director</div>
+        <a href="mailto:valentin.bellassen@inrae.fr">valentin.bellassen@inrae.fr</a>
+        <div class="ref-phone">+33 380 772 791</div>
+      </div>
+      <div class="ref-card">
+        <div class="ref-name">Laurent PHILIPPOT</div>
+        <div class="ref-role">Research Director</div>
+        <a href="mailto:laurent.philippot@inrae.fr">laurent.philippot@inrae.fr</a>
+        <div class="ref-phone">+33 380 693 346</div>
+      </div>
+    </div>
+
+  </main>
+</div>
 
 </body>
 </html>
 """
 
-with open("CV_MSCA_PF.html", "w", encoding="utf-8") as f:
+with open("sarah_huet_cv.html", "w", encoding="utf-8") as f:
     f.write(html_content)
 
-print("CV HTML file generated successfully.")
+print("CV saved to sarah_huet_cv.html")
