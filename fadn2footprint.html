@@ -79,10 +79,7 @@
       <span class="project-badge"><i class="fas fa-code-branch"></i> Work in progress</span>
       <h1 style="font-size:1.8em; color:#22427f; margin-top:10px;">FADN2Footprint</h1>
       <p style="font-size:1em; color:#555; margin-top:8px; line-height:1.7; max-width:750px;">
-        <strong>FADN2Footprint</strong> is an R package currently under development that transforms
-        Farm Accountancy Data Network (FADN) records into multi-criteria sustainability assessments.
-        It bridges farm-level economic data with environmental, economic, and social performance
-        indicators in a life-cycle assessment spirit.
+        <strong>FADN2Footprint</strong> is an R package currently under development that estimates the main environmental impacts of farms (climate, biodiversity, water) on the sole basis of their accountancy data (as recorded in the Farm Accountancy Data Network - FADN). It bridges farm-level economic data with environmental performance indicators in a life-cycle assessment spirit.
       </p>
     </div>
 
@@ -90,7 +87,7 @@
     <div class="project-section">
       <h2><i class="fas fa-database" style="margin-right:8px;"></i>Input Data</h2>
       <p style="font-size:0.93em; color:#444; margin-bottom:16px; line-height:1.6;">
-        The package supports two main data pathways, complemented by additional datasets for allocation keys and emission parameters.
+        The package supports two versions of FADN: EU level and national FADN paired with the national Land Parcel Information System (LPIS). The latter allows to mobilize spatially explicit open data (e.g. maps of hedges) to refine the estimates.
       </p>
 
       <div class="input-pathways">
@@ -128,7 +125,7 @@
         <div class="pathway-card pathway-additional">
           <div class="pathway-header">
             <span class="pathway-number" style="background:#5b9bd5;">+</span>
-            <h3>Additional Data Sources</h3>
+            <h3>Additional Data Sources (embedded in the package to calibrate fixed parameters)</h3>
           </div>
           <div class="pathway-body">
             <ul>
@@ -193,18 +190,14 @@
       </div>
     </div>
 
-    <!-- ===== OUTPUT ===== -->
+        <!-- ===== Practices ===== -->
     <div class="project-section">
-      <h2><i class="fas fa-chart-bar" style="margin-right:8px;"></i>Output Indicators</h2>
+      <h2><i class="fas fa-chart-bar" style="margin-right:8px;"></i>Farm Practices</h2>
 
       <!-- Farm Practices -->
       <div class="output-category">
-        <div class="output-category-header">
-          <i class="fas fa-tractor"></i>
-          <h3>Farm Practices</h3>
-        </div>
         <div class="output-tags">
-          <span class="output-tag">Fertilizer quantity &amp; quality</span>
+          <span class="output-tag">Fertilizer quantity (mineral and organic)</span>
           <span class="output-tag">Pesticides use</span>
           <span class="output-tag">Tillage intensity</span>
           <span class="output-tag">Crop diversity</span>
@@ -214,9 +207,15 @@
           <span class="output-tag">Ground cover</span>
           <span class="output-tag">Livestock density</span>
           <span class="output-tag">Livestock feed intake</span>
-          <span class="output-tag">Rearing parameters</span>
+          <span class="output-tag">Rearing parameters (e.g. age at first calving, cull rate)</span>
+          <span class="output-tag">Manure management</span>
         </div>
       </div>
+    </div>
+
+    <!-- ===== OUTPUT ===== -->
+    <div class="project-section">
+      <h2><i class="fas fa-chart-bar" style="margin-right:8px;"></i>Output Indicators</h2>
 
       <!-- Environmental Footprint -->
       <div class="output-category">
@@ -239,9 +238,9 @@
         </div>
         <div class="output-tags">
           <span class="output-tag tag-econ">Price premium</span>
-          <span class="output-tag tag-econ">Added value</span>
+          <span class="output-tag tag-econ">Net return of Assets</span>
+          <span class="output-tag tag-econ">Net return of Land</span>
           <span class="output-tag tag-econ">Operating margin</span>
-          <span class="output-tag tag-econ">Labour to product ratio</span>
         </div>
       </div>
 
@@ -252,8 +251,9 @@
           <h3>Social Performance</h3>
         </div>
         <div class="output-tags">
-          <span class="output-tag tag-social">Generational renewal</span>
-          <span class="output-tag tag-social">Farmer education</span>
+          <span class="output-tag tag-social">Employment</span>
+          <span class="output-tag tag-social">Wage level</span>
+          <span class="output-tag tag-social">Net revenue per unsalaried working unit</span>
         </div>
       </div>
 
