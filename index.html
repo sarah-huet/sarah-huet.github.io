@@ -1,128 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sarah HUET – Home</title>
   <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
 
-<!-- HEADER -->
-<header>
-  <h1>Sarah HUET, PhD</h1>
-  <h2>Agri-food Ecology &amp; Economics</h2>
-  <p class="tagline">Early career researcher bridging ecology and economics, with a hands-on practice background,<br/>to study, model, and leverage the transition of food systems.</p>
-  <div class="contacts">
-    <a href="mailto:sarah.huet@inrae.fr"><span class="icon">✉</span> sarah.huet@inrae.fr</a>
-    <a href="https://orcid.org/0000-0002-5449-6959" target="_blank"><span class="icon">🔗</span> ORCID</a>
-    <a href="https://github.com/sarah-huet" target="_blank"><span class="icon">⌨</span> GitHub</a>
-    <a href="https://www.linkedin.com/in/sarah-huet-phd/" target="_blank"><span class="icon">⌨</span> LinkedIn</a>
+  <!-- HEADER -->
+  <header class="home-header">
+    <img class="header-photo" src="photo_biodivlabel_close.png"
+      alt="Sarah Huet speaking at the BiodivLabel expertise restitution event in Paris, France, 2025">
+    <h1>Sarah HUET, PhD</h1>
+    <h2>Agri-food Ecology &amp; Economics</h2>
+    <p class="tagline">Early career researcher bridging ecology and economics, with a hands-on practice
+      background,<br />to study, model, and leverage the transition of food systems.</p>
+    <div class="contacts">
+      <a href="mailto:sarah.huet@inrae.fr"><span class="icon">✉</span> sarah.huet@inrae.fr</a>
+      <a href="https://orcid.org/0000-0002-5449-6959" target="_blank"><span class="icon">🔗</span> ORCID</a>
+      <a href="https://github.com/sarah-huet" target="_blank"><span class="icon">⌨</span> GitHub</a>
+      <a href="https://www.linkedin.com/in/sarah-huet-phd/" target="_blank"><span class="icon">⌨</span> LinkedIn</a>
+    </div>
+  </header>
+
+  <div class="wrapper">
+
+    <!-- SIDEBAR NAVIGATION -->
+    <aside>
+      <h3>Navigation</h3>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="cv.html"><i class="fas fa-file-alt"></i> CV</a></li>
+        <li><a href="fadn2footprint.html"><i class="fas fa-leaf"></i> FADN2Footprint</a></li>
+        <li><a href="media.html"><i class="fas fa-video"></i> Media</a></li>
+      </ul>
+
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+      <!-- ABOUT ME -->
+      <div class="section-title" style="margin-top:0;">About Me</div>
+      <div class="about-text">
+        <p>
+          I am a post-doctoral researcher at <strong>INRAE</strong> (French National Research Institute for Agriculture,
+          Food and Environment), working in the CESAER group (Dijon, France). My research sits at the intersection of
+          <strong>agricultural economics and ecology</strong>, with a focus on quantifying the <strong>environmental
+            footprint</strong> of farming systems, and the existing <strong>trade-offs with economic
+            performances</strong>, using large-scale European data.
+        </p>
+        <p style="margin-top:12px;">
+          Before entering academia, I worked as a cook, farmer, and nutritionist — giving me a unique hands-on
+          understanding of the food chain from farm to fork. I hold a PhD in Community Ecology and now apply
+          quantitative methods to bridge the gap between environmental science and agricultural economics.
+        </p>
+      </div>
+
+      <!-- KEY CAPABILITIES -->
+      <div class="section-title">Key Capabilities &amp; Achievements</div>
+      <ul class="capabilities-list">
+        <li><strong>Interdisciplinary Agri-Food Economist &amp; Ecologist:</strong> Unique trajectory from hands-on
+          practitioner to quantitative scientist, bridging physical environmental footprinting and economic valuation.
+        </li>
+        <li><strong>Pathfinder in Large-Scale Agri-Environmental Assessment:</strong> Developer of the
+          <em>FADN2Footprint</em> R package and the <em>BVIAS</em> model, translating European farm accountancy and
+          spatial data into environmental footprints.
+        </li>
+        <li><strong>Demonstrated Policy Impact:</strong> Appointed to an expert group for two French ministries, invited
+          to present at DG Agri on FADN/FSDN.</li>
+        <li><strong>Strong Academic Communicator:</strong> 5 peer-reviewed articles in top-tier journals, presentations
+          at international congresses.</li>
+      </ul>
+
+      <!-- PAGE PREVIEWS -->
+      <div class="section-title">Explore</div>
+      <div class="preview-grid">
+
+        <a href="cv.html" class="preview-card">
+          <div class="preview-card-header">
+            <div class="preview-card-icon"><i class="fas fa-file-alt"></i></div>
+            <span class="preview-card-arrow">→</span>
+          </div>
+          <h3>Curriculum Vitae</h3>
+          <p>Full academic background, professional experience from farming to research, publications, education, and
+            references.</p>
+        </a>
+
+        <a href="fadn2footprint.html" class="preview-card">
+          <div class="preview-card-header">
+            <div class="preview-card-icon"><i class="fas fa-leaf"></i></div>
+            <span class="preview-card-arrow">→</span>
+          </div>
+          <h3>FADN2Footprint</h3>
+          <p>An R package translating Farm Accountancy Data Network data into multi-criteria environmental, economic,
+            and social footprints.</p>
+        </a>
+
+        <a href="media.html" class="preview-card">
+          <div class="preview-card-header">
+            <div class="preview-card-icon"><i class="fas fa-video"></i></div>
+            <span class="preview-card-arrow">→</span>
+          </div>
+          <h3>Media &amp; Conferences</h3>
+          <p>Recordings of talks, conference presentations, and seminars on biodiversity footprinting and agricultural
+            data science.</p>
+        </a>
+
+      </div>
+
+      <!-- RECENT PUBLICATIONS PREVIEW -->
+      <div class="section-title">Recent Publications</div>
+      <ul class="pub-list">
+        <li>
+          <span class="pub-label label-review">Article</span>
+          <strong>Huet S.</strong> et al. (2026) Biodiversity impact of agricultural products in France: Greater
+          differences across product types than food quality schemes. <em>Ecological Economics</em>.
+          <a href="https://doi.org/10.1016/j.ecolecon.2026.109072" target="_blank">doi:
+            10.1016/j.ecolecon.2026.109072</a>
+        </li>
+        <li>
+          <span class="pub-label label-book">Report</span>
+          Ulrich C., …, <strong>Huet S.</strong> et al. (2025b) Agriculture, aquaculture and fishing: impact of food
+          standards on biodiversity. Summary of the scientific report. INRAE; Ifremer.
+          <a href="https://dx.doi.org/10.17180/91tv-5758" target="_blank">doi: 10.17180/91tv-5758</a>
+        </li>
+        <li>
+          <span class="pub-label label-book">Report</span>
+          Ulrich C., …, <strong>Huet S.</strong> et al. (2025a) Agriculture, aquaculture et pêche : impacts des modes de
+          production labellisés sur la biodiversité. Rapport scientifique de l'étude. INRAE; Ifremer.
+          <a href="https://dx.doi.org/10.17180/ayg4-0b92" target="_blank">doi: 10.17180/ayg4-0b92</a>
+        </li>
+      </ul>
+      <p style="margin-top:8px;"><a href="cv.html" style="color:#2d5aa0; font-weight:600;">See all publications on the
+          CV page →</a></p>
+
+    </main>
+
   </div>
-</header>
 
-<div class="wrapper">
+  <!-- Mobile sidebar toggle -->
+  <button class="sidebar-toggle" id="sidebarToggle">
+    <i class="fas fa-bars"></i>
+  </button>
 
-  <!-- SIDEBAR NAVIGATION -->
-  <aside>
-    <h3>Navigation</h3>
-    <ul class="nav-links">
-      <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
-      <li><a href="cv.html"><i class="fas fa-file-alt"></i> CV</a></li>
-      <li><a href="fadn2footprint.html"><i class="fas fa-leaf"></i> FADN2Footprint</a></li>
-      <li><a href="media.html"><i class="fas fa-video"></i> Media</a></li>
-    </ul>
-
-
-  </aside>
-
-  <!-- MAIN CONTENT -->
-  <main>
-
-    <!-- ABOUT ME -->
-    <div class="section-title" style="margin-top:0;">About Me</div>
-    <div class="about-text">
-      <p>
-        I am a post-doctoral researcher at <strong>INRAE</strong> (French National Research Institute for Agriculture, Food and Environment), working in the CESAER group (Dijon, France). My research sits at the intersection of <strong>agricultural economics and ecology</strong>, with a focus on quantifying the <strong>environmental footprint</strong> of farming systems, and the existing <strong>trade-offs with economic performances</strong>, using large-scale European data.
-      </p>
-      <p style="margin-top:12px;">
-        Before entering academia, I worked as a cook, farmer, and nutritionist — giving me a unique hands-on understanding of the food chain from farm to fork. I hold a PhD in Community Ecology and now apply quantitative methods to bridge the gap between environmental science and agricultural economics.
-      </p>
-    </div>
-
-    <!-- KEY CAPABILITIES -->
-    <div class="section-title">Key Capabilities &amp; Achievements</div>
-    <ul class="capabilities-list">
-      <li><strong>Interdisciplinary Agri-Food Economist &amp; Ecologist:</strong> Unique trajectory from hands-on practitioner to quantitative scientist, bridging physical environmental footprinting and economic valuation.</li>
-      <li><strong>Pathfinder in Large-Scale Agri-Environmental Assessment:</strong> Developer of the <em>FADN2Footprint</em> R package and the <em>BVIAS</em> model, translating European farm accountancy and spatial data into environmental footprints.</li>
-      <li><strong>Demonstrated Policy Impact:</strong> Appointed to an expert group for two French ministries, invited to present at DG Agri on FADN/FSDN.</li>
-      <li><strong>Strong Academic Communicator:</strong> 5 peer-reviewed articles in top-tier journals, presentations at international congresses.</li>
-    </ul>
-
-    <!-- PAGE PREVIEWS -->
-    <div class="section-title">Explore</div>
-    <div class="preview-grid">
-
-      <a href="cv.html" class="preview-card">
-        <div class="preview-card-header">
-          <div class="preview-card-icon"><i class="fas fa-file-alt"></i></div>
-          <span class="preview-card-arrow">→</span>
-        </div>
-        <h3>Curriculum Vitae</h3>
-        <p>Full academic background, professional experience from farming to research, publications, education, and references.</p>
-      </a>
-
-      <a href="fadn2footprint.html" class="preview-card">
-        <div class="preview-card-header">
-          <div class="preview-card-icon"><i class="fas fa-leaf"></i></div>
-          <span class="preview-card-arrow">→</span>
-        </div>
-        <h3>FADN2Footprint</h3>
-        <p>An R package translating Farm Accountancy Data Network data into multi-criteria environmental, economic, and social footprints.</p>
-      </a>
-
-      <a href="media.html" class="preview-card">
-        <div class="preview-card-header">
-          <div class="preview-card-icon"><i class="fas fa-video"></i></div>
-          <span class="preview-card-arrow">→</span>
-        </div>
-        <h3>Media &amp; Conferences</h3>
-        <p>Recordings of talks, conference presentations, and seminars on biodiversity footprinting and agricultural data science.</p>
-      </a>
-
-    </div>
-
-    <!-- RECENT PUBLICATIONS PREVIEW -->
-    <div class="section-title">Recent Publications</div>
-    <ul class="pub-list">
-      <li>
-        <span class="pub-label label-review">Article</span>
-        <strong>Huet S.</strong> et al. (2026) Biodiversity impact of agricultural products in France: Greater differences across product types than food quality schemes. <em>Ecological Economics</em>.
-        <a href="https://doi.org/10.1016/j.ecolecon.2026.109072" target="_blank">doi: 10.1016/j.ecolecon.2026.109072</a>
-      </li>
-      <li>
-        <span class="pub-label label-book">Report</span>
-        Ulrich C., …, <strong>Huet S.</strong> et al. (2025b) Agriculture, aquaculture and fishing: impact of food standards on biodiversity. Summary of the scientific report. INRAE; Ifremer.
-        <a href="https://dx.doi.org/10.17180/91tv-5758" target="_blank">doi: 10.17180/91tv-5758</a>
-      </li>
-      <li>
-        <span class="pub-label label-book">Report</span>
-        Ulrich C., …, <strong>Huet S.</strong> et al. (2025a) Agriculture, aquaculture et pêche : impacts des modes de production labellisés sur la biodiversité. Rapport scientifique de l'étude. INRAE; Ifremer.
-        <a href="https://dx.doi.org/10.17180/ayg4-0b92" target="_blank">doi: 10.17180/ayg4-0b92</a>
-      </li>
-    </ul>
-    <p style="margin-top:8px;"><a href="cv.html" style="color:#2d5aa0; font-weight:600;">See all publications on the CV page →</a></p>
-
-  </main>
-
-</div>
-
-<!-- Mobile sidebar toggle -->
-<button class="sidebar-toggle" id="sidebarToggle">
-  <i class="fas fa-bars"></i>
-</button>
-
-<script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
+
 </html>

@@ -63,6 +63,23 @@ header .contacts a {
 }
 header .contacts a:hover { color: #fff; }
 
+.home-header {
+  position: relative;
+  padding-right: 210px;
+}
+.home-header .header-photo {
+  position: absolute;
+  top: 50%;
+  right: 48px;
+  width: 120px;
+  height: 180px;
+  object-fit: cover;
+  object-position: center 35%;
+  transform: translateY(-50%);
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  border-radius: 6px;
+}
+
 /* ========== LAYOUT ========== */
 .wrapper {
   display: flex;
@@ -651,7 +668,15 @@ main {
 
   header {
     padding: 28px 20px 20px 20px;
-    padding-top: 60px;
+    padding-top: 110px;
+  }
+  .home-header { padding-right: 20px; }
+  .home-header .header-photo {
+    top: 12px;
+    right: 16px;
+    width: 54px;
+    height: 81px;
+    transform: none;
   }
   header h1 { font-size: 1.8em; }
 
